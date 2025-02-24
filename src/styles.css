@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+/* /////////////////// VARIABLES //////////////////// */
+:root {
+    --background: #15191D;
+    --title: #A1A1A1;
+    --text: #777777;
+    --softText: #A1A3A6;
+    --icons: #5C5C5C;
+    --color: #6B73B5;
+    --tonoLigero: #d7dbdd;
+    --white: #FCFCFC;
+}
+
+/*  */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* /////////////////// TEXTS //////////////////// */
+
+/* TITULO */
+h1 {
+    font-family: "Vollkorn SC", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    /*18px*/
+    font-size: 1.125rem;
+    color: var(--title);
+}
+
+/* /////////////////// Tags //////////////////// */
+
+main {
+    background-color: var(--background);
+}
+
+.body {
+    background-color: var(--background);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--purple);
+}
+
+.requisito {
+    color: var(--rojo);
+    display: block;
+    margin-top: 0;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+}
+
+.border-danger {
+    color: var(--rojo);
+}
+
+
+/*BREAKPOINTS*/
+@media screen and (max-width: 650px) {}

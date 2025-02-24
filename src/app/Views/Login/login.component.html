@@ -1,1 +1,57 @@
-<p>login works!</p>
+<main>
+    <div class="container">
+
+        <div class="logoLogin">
+
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="inputLogin">
+                <div class="inputSpace">
+                    <div class="requisito" *ngIf="(loginForm.get('correoUsuario')?.dirty)">
+                        <span *ngIf="loginForm.get('correoUsuario')?.hasError('required')">
+                            El campo es requerido
+                        </span>
+
+                        <span *ngIf="loginForm.get('correoUsuario')?.hasError('email')">
+                            Debe ser un email valido
+                        </span>
+                    </div>
+                    <input type="email" id="inputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo"
+                        class="input" formControlName="correoUsuario" ngNoTouched>
+                </div>
+
+                <div class="inputSpace">
+                    <div class="requisito" *ngIf="(loginForm.get('password')?.dirty)">
+                        <span *ngIf="loginForm.get('password')?.hasError('required')">
+                            El campo es requerido
+                        </span>
+                    </div>
+                    <input type="password" id="inputPassword1" placeholder="Ingresa tu contraseña" class="input"
+                        formControlName="password" ngNoTouched>
+                </div>
+            </div>
+
+            <div class="buttonSpace">
+                <div class="buttonLogin">
+                    <div class="button">
+                        <button routerLink="/dashboard" (click)="login()" type="submit" class="buttonL">Iniciar
+                            sesión</button>
+                    </div>
+                </div>
+                <div class="buttonLogin">
+                    <div class="button">
+                        <a routerLink="/registrate-usuario" class="buttonR">Olvidaste tu contraseña</a>
+                    </div>
+                </div>
+                <div class="buttonLogin">
+                    <div class="button">
+                        <button routerLink="/dashboard" (click)="login()" type="submit" class="buttonL">Registrate
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
