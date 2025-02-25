@@ -1,21 +1,23 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './Views/Login/login.component';
-import { DashboardComponent } from './Views/DashBoard/dashboard.component';
-import { HomeComponent } from './Views/Home/home.component';
-import { SignupComponent } from './Views/Login/SignUp/signup.component';
-import { AceptTermsComponent } from './Views/Login/SignUp/AceptPolitics/acept-terms.component';
-import { LostpassworeComponent } from './Views/Login/LostPasswore/lostpasswore.component';
-import { SearchComponent } from './Views/Search/search.component';
-import { HelpComponent } from './Views/help/help.component';
-import { ProfileComponent } from './Views/profile/profile.component';
-import { ReportsComponent } from './Views/reports/reports.component';
-import { ReportComponent } from './Views/reports/report/report.component';
-import { BacheComponent } from './Views/reports/bache/bache.component';
-import { CreatedReportComponent } from './Views/created-report/created-report.component';
-import { ReportValidateComponent } from './Views/created-report/report-validate/report-validate.component';
-import { AddReportComponent } from './Views/add-report/add-report.component';
-import { PinSelectComponent } from './Views/add-report/pin-select/pin-select.component';
-import { CreateReportComponent } from './Views/add-report/create-report/create-report.component';
+import { DashboardComponent } from './Views/Layouts/A-DashBoard/dashboard.component';
+import { LoginComponent } from './Views/Layouts/B-Login/login.component';
+import { SignupComponent } from './Views/Layouts/B.1-SignUp/signup.component';
+import { AceptTermsComponent } from './Views/Layouts/B.1.1-AceptPolitics/acept-terms.component';
+import { LostpassworeComponent } from './Views/Layouts/B.2-LostPasswore/lostpasswore.component';
+import { HomeComponent } from './Views/Layouts/C-Home/home.component';
+import { ReportsComponent } from './Views/Layouts/D-reports/reports.component';
+import { ReportComponent } from './Views/Layouts/D.1-report/report.component';
+import { BacheComponent } from './Views/Layouts/D.2-bache/bache.component';
+import { CreatedReportComponent } from './Views/Layouts/C.1-created-report/created-report.component';
+import { ReportValidateComponent } from './Views/Layouts/C.1.1-report-validate/report-validate.component';
+import { AddReportComponent } from './Views/Layouts/C.2-add-report/add-report.component';
+import { PinSelectComponent } from './Views/Layouts/C.2.1-pin-select/pin-select.component';
+import { CreateReportComponent } from './Views/Layouts/C.2.2-create-report/create-report.component';
+import { HelpComponent } from './Views/Layouts/F-help/help.component';
+import { ProfileComponent } from './Views/Layouts/G-profile/profile.component';
+import { SearchComponent } from './Views/Layouts/E-Search/search.component';
+
+
 
 export const routes: Routes = [
     {path:"dashboard", component: DashboardComponent},
