@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-btn-green',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './btn-green.component.css'
 })
 export class BtnGreenComponent {
-
+  @Input() text: string = 'Botón';
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IptPrincipalComponent } from './ipt-principal.component';
+import { InptPasswordComponent } from './inpt-password.component';
 
-describe('IptPrincipalComponent', () => {
-  let component: IptPrincipalComponent;
-  let fixture: ComponentFixture<IptPrincipalComponent>;
+describe('InptPasswordComponent', () => {
+  let component: InptPasswordComponent;
+  let fixture: ComponentFixture<InptPasswordComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IptPrincipalComponent]
+      imports: [InptPasswordComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IptPrincipalComponent);
+    fixture = TestBed.createComponent(InptPasswordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

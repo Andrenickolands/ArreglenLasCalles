@@ -1,0 +1,12 @@
+<div class="inputSpace">
+    <!-- <div class="requisito" *ngIf="showErrors && (signUpUserForm.get('name')?.dirty || signUpUserForm.get('name')?.touched && signUpUserForm.get('name')?.invalid)">
+        <span  *ngIf="signUpUserForm.get('name')?.hasError('required')" >
+            El campo es requerido
+        </span>
+        <br class="salto">
+        <span *ngIf="signUpUserForm.get('name')?.hasError('onlyLetters')" >
+            No pueden ser números o símbolos
+        </span>
+    </div> -->
+    <input type="date" [id]="id" [formControl]="control" [placeholder]="placeholder" class="input" ngNoTouched />
+</div>

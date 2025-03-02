@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-btn-s-line',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './btn-s-line.component.css'
 })
 export class BtnSLineComponent {
-
+  @Input() text: string = 'Botón';
 }

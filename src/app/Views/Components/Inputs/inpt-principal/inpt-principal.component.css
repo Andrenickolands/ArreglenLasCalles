@@ -1,0 +1,28 @@
+.inputPosition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputSpace {
+    padding-bottom: 28px;
+}
+
+::placeholder {
+    color: var(--textInput);
+}
+
+.input {
+    text-align: left;
+    background-color: var(--black);
+    color: var(--textInputPress);
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 520px;
+    height: 70px;
+    padding-left: 20px;
+    font-weight: 800;
+}

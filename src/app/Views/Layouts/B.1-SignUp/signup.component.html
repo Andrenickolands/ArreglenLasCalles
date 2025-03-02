@@ -1,13 +1,50 @@
 <body>
     <div class="container colum">
-        <div class="tittle">
+        <div class="tittle top40">
             <h2>Registrate</h2>
         </div>
 
         <form [formGroup]="signUpUserForm">
-            <div class="inputPosition">
-    
-                <div class="inputSpace">
+            <div class="inputPosition top40">
+
+                <app-inpt-principal
+                  type="text"
+                  id="name" 
+                  placeholder="Nombre completo" 
+                  [control]="signUpUserForm.controls.name">
+                </app-inpt-principal>
+                <app-inpt-principal
+                  type="email"
+                  id="name" 
+                  placeholder="correo" 
+                  [control]="signUpUserForm.controls.email">
+                </app-inpt-principal>
+                <app-inpt-principal
+                  type="date"
+                  id="name" 
+                  placeholder="fecha de nacimiento" 
+                  [control]="signUpUserForm.controls.birthdate">
+                </app-inpt-principal>
+                <app-inpt-principal
+                  type="text"
+                  id="country" 
+                  placeholder="País" 
+                  [control]="signUpUserForm.controls.country">
+                </app-inpt-principal>
+                <app-inpt-principal
+                  type="password"
+                  id="country" 
+                  placeholder="Contraseña" 
+                  [control]="signUpUserForm.controls.password">
+                </app-inpt-principal>
+                <app-inpt-principal
+                  type="password"
+                  id="country" 
+                  placeholder="Confirmar ontraseña" 
+                  [control]="signUpUserForm.controls.passwordConfirm">
+                </app-inpt-principal>
+
+                <!-- <div class="inputSpace">
                     <div class="requisito" *ngIf="showErrors && (signUpUserForm.get('name')?.dirty || signUpUserForm.get('name')?.touched && signUpUserForm.get('name')?.invalid)">
                         <span  *ngIf="signUpUserForm.get('name')?.hasError('required')" >
                             El campo es requerido
@@ -31,9 +68,9 @@
                         </span>
                     </div>
                     <input type="email" formControlName="email" placeholder="Correo electrónico" class="input">
-                </div>
+                </div> -->
 
-                <div class="inputSpace">
+                <!-- <div class="inputSpace">
                     <div class="requisito" *ngIf="showErrors && (signUpUserForm.get('country')?.dirty || signUpUserForm.get('country')?.touched && signUpUserForm.get('country')?.invalid)">
                         <span *ngIf="signUpUserForm.get('country')?.hasError('required')" >
                             El campo es requerido
@@ -44,9 +81,9 @@
                         </span>
                     </div>
                     <input type="text" formControlName="country" placeholder="País" class="input">
-                </div>
+                </div> -->
     
-                <div class="inputSpace">
+                <!-- <div class="inputSpace">
                     <div class="requisito" *ngIf="showErrors && (signUpUserForm.get('birthdate')?.dirty || signUpUserForm.get('birthdate')?.touched && signUpUserForm.get('birthdate')?.invalid)">
                         <span *ngIf="signUpUserForm.get('birthdate')?.hasError('required')" >
                             El campo es requerido
@@ -85,12 +122,12 @@
                             <input type="password" formControlName="newPasswordAgain" placeholder="Confirma tu contraseña" class="input">
                         </div>
                 </div>
-    
-                <div class="btnPostion">
+     -->
+                <!-- <div class="btnPostion">
                     <div class="btn">
                         <button type="submit" class="btnPrincipal" (click)="signUp()" id="botonRegistrate">Registrarse</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </form>
     </div>

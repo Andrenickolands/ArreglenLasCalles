@@ -2,8 +2,8 @@
 :root {
     --background: #15191D;
     --black: #262626;
-    --darktext: #666262;
-    --textInput: #938C8C;
+    --textInput: #666262;
+    --textInputPress: #938C8C;
     --textBtn: #3B3B3B;
     --color: #F2C8A2;
     --rojo: #FF7D69;
@@ -77,6 +77,27 @@ a {
 
 .border-danger {
     color: var(--rojo);
+}
+
+/* /////////////////// Spaces //////////////////// */
+.top20 {
+    margin-top: 20px;
+}
+
+.top40 {
+    margin-top: 40px;
+}
+
+.top80 {
+    margin-top: 80px;
+}
+
+.top120 {
+    margin-top: 120px;
+}
+
+.top140 {
+    margin-top: 140px;
 }
 
 

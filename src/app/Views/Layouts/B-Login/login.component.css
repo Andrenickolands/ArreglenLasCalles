@@ -9,11 +9,6 @@
     transform: scale(0.9);
     min-height: 90vh;
 }
-
-::placeholder {
-    color: var(--darktext);
-}
-
 .inputPosition {
     display: flex;
     align-items: center;
@@ -25,17 +20,22 @@
     padding-bottom: 28px;
 }
 
+::placeholder {
+    color: var(--textInput);
+}
+
 .input {
     text-align: left;
     background-color: var(--black);
-    color: var(--textInput);
-    font-size: 24px;
+    color: var(--textInputPress);
+    font-size: 20px;
     border: none;
     outline: none;
     border-radius: 12px;
     width: 520px;
     height: 70px;
     padding-left: 20px;
+    font-weight: 800;
 }
 
 .btnPostion {
