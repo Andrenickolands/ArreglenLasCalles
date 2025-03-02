@@ -6,12 +6,13 @@ import { Router } from '@angular/router';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
 import { User } from '../../../Models/User';
 import { InptPrincipalComponent } from '../../Components/Inputs/inpt-principal/inpt-principal.component';
+import { InptDateComponent } from '../../Components/Inputs/inpt-date/inpt-date.component';
 
 
 
 @Component({
   selector: 'app-signup',
-  imports: [CommonModule, ReactiveFormsModule, InptPrincipalComponent],
+  imports: [CommonModule, ReactiveFormsModule, InptPrincipalComponent, InptDateComponent],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
