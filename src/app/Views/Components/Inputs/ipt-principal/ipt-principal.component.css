@@ -1,0 +1,23 @@
+.inputPosition {
+    
+}
+
+.inputSpace {
+    padding-top: 20px;
+}
+
+.input {
+    text-align: left;
+    background-color: var(--black);
+    color: #666262;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 552px;
+    height: 75px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 20px;
+    padding-right: 160px;
+}

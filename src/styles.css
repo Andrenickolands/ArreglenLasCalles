@@ -1,13 +1,17 @@
 /* /////////////////// VARIABLES //////////////////// */
 :root {
     --background: #15191D;
-    --title: #A1A1A1;
-    --text: #777777;
-    --softText: #A1A3A6;
+    --black: #262626;
+    --darktext: #666262;
+    --textInput: #938C8C;
+    --textBtn: #3B3B3B;
+    --color: #F2C8A2;
+    --rojo: #FF7D69;
+
     --icons: #5C5C5C;
-    --color: #6B73B5;
-    --tonoLigero: #d7dbdd;
+    --softText: #A1A3A6;
     --white: #FCFCFC;
+    --tonoLigero: #d7dbdd;
 }
 
 /*  */
@@ -15,41 +19,52 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: "Red Hat Display", serif;
+    background-color: var(--background);
 }
 
 /* /////////////////// TEXTS //////////////////// */
 
+
 /* TITULO */
 h1 {
-    font-family: "Vollkorn SC", serif;
+    
+    font-optical-sizing: auto;
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
+    font-style: normal;
+    
     /*18px*/
     font-size: 1.125rem;
+    font-weight: 800;
     color: var(--title);
+}
+
+.tittle {
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+    /*32px*/
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color);
 }
 
 /* /////////////////// Tags //////////////////// */
 
-main {
-    background-color: var(--background);
-}
-
-.body {
-    background-color: var(--background);
-}
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+}
+
+.colum {
+    flex-direction: column;
 }
 
 a {
     text-decoration: none;
-    color: var(--purple);
+    color: #A0A0A0;
 }
 
 .requisito {

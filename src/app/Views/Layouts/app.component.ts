@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
+  styleUrl: '../../../styles.css'
 })
 export class AppComponent {
   title = 'ArreglenLasCalles';

@@ -20,8 +20,8 @@ import { SearchComponent } from './Views/Layouts/E-Search/search.component';
 
 
 export const routes: Routes = [
-    {path:"dashboard", component: DashboardComponent},
-    {path:"login", component: LoginComponent},
+    {path:"Dashboard", component: DashboardComponent},
+    {path:"Login", component: LoginComponent},
     {path:"Signup", component: SignupComponent},
     {path:"Acept-terms", component: AceptTermsComponent},
     {path:"Lost-passwore", component: LostpassworeComponent},
@@ -37,6 +37,6 @@ export const routes: Routes = [
     {path:"Add-report", component: AddReportComponent},
     {path:"Pin-select", component: PinSelectComponent},
     {path:"Create-report", component: CreateReportComponent},
-    {path: "", component: HomeComponent},
+    {path: "", component: SignupComponent},
     {path:"**", redirectTo:"", pathMatch:"full"},
 ];

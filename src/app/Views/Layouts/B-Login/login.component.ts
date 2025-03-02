@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-// import { userLogin } from '../../core/interfaces/login';
+import { userLogin } from '../../../Models/Login';
 
 @Component({
   selector: 'app-login',
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css' //['./login.component.css', '../../../styles.css']
 })
 
 export class LoginComponent implements OnInit {
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   constructor(formBuilder: FormBuilder, private router: Router) {
     this.loginForm = formBuilder.group({
-      correoUsuario: ["", Validators.required, Validators.email],
+      email: ["", Validators.required, Validators.email],
       password: ["", Validators.required],
     })
 
@@ -29,29 +29,28 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    //   this.loginForm.markAllAsTouched();
+      this.loginForm.markAllAsTouched();
 
-    //   if (this.loginForm.valid) {
-    //     console.log('logeado');
+      if (this.loginForm.valid) {
+        console.log('logeado');
 
-    //     const user: userLogin = {
-    //       idusuario: 0,
-    //       correoUsuario: this.loginForm.get('correoUsuario')?.value,
-    //       password: this.loginForm.get('password')?.value
-    //     }
+        const user: userLogin = {
+          iduser: 0,
+          email: this.loginForm.get('email')?.value,
+          password: this.loginForm.get('password')?.value
+        }
 
-    //     console.log('Username');
-    //     console.log(user);
+        console.log('Username');
+        console.log(user);
 
-    //     console.log('form');
-    //     console.log(this.loginForm);
+        console.log('form');
+        console.log(this.loginForm);
 
-    //     // this.router.navigateByUrl('/home');
-    //     this.router.navigateByUrl('/dashboard');
-    //     this.loginForm.reset();
-    //   } else {
+        this.router.navigateByUrl('/Home');
+        this.loginForm.reset();
+      } else {
 
-    //   }
+      }
   }
 
 }

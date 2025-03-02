@@ -1,0 +1,86 @@
+
+
+.logoSpace {
+    padding-bottom: 50px;
+}
+
+.body {
+    scrollbar-width: none;
+    transform: scale(0.9);
+    min-height: 90vh;
+}
+
+::placeholder {
+    color: var(--darktext);
+}
+
+.inputPosition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputSpace {
+    padding-bottom: 28px;
+}
+
+.input {
+    text-align: left;
+    background-color: var(--black);
+    color: var(--textInput);
+    font-size: 24px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 520px;
+    height: 70px;
+    padding-left: 20px;
+}
+
+.btnPostion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btnSpace {
+    padding-bottom: 16px;
+}
+
+.btnTop {
+    padding-top: 18px;
+}
+
+.btnTop2 {
+    padding-top: 38px;
+}
+
+.lineTop {
+    padding-top: 24px;
+}
+
+.btn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnPrincipal {
+    width: 260px;
+    height: 62px;
+    background-color: var(--color);
+    border-radius: 18px;
+    font-weight: bolder;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 28px;
+    cursor: pointer;
+
+    font-optical-sizing: auto;
+
+    font-style: normal;
+}
