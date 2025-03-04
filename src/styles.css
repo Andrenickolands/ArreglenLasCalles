@@ -70,6 +70,8 @@ a {
 
 .requisito {
     color: var(--rojo);
+    font-size: 18px;
+    font-weight: 800;
     display: block;
     margin-top: 0;
     padding-bottom: 1em;
@@ -78,6 +80,7 @@ a {
 
 .border-danger {
     color: var(--rojo);
+    border: 2px solid var(--rojo); /* Cambia el color a tu preferencia */
 }
 
 /* /////////////////// Spaces //////////////////// */

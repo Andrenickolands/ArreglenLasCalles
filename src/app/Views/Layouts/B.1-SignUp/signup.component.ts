@@ -9,8 +9,6 @@ import { InptDateComponent } from '../../Components/Inputs/inpt-date/inpt-date.c
 import { InptEmailComponent } from '../../Components/Inputs/inpt-email/inpt-email.component';
 import { InptPasswordComponent } from '../../Components/Inputs/inpt-password/inpt-password.component';
 
-
-
 @Component({
   selector: 'app-signup',
   imports: [CommonModule, ReactiveFormsModule, /*InptPrincipalComponent, InptDateComponent, InptEmailComponent, InptPasswordComponent */],
@@ -19,16 +17,8 @@ import { InptPasswordComponent } from '../../Components/Inputs/inpt-password/inp
 })
 
 export class SignupComponent implements OnInit {
+  signUpUserForm: FormGroup;
   showErrors: boolean = false;
-
-  signUpUserForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    country: new FormControl(''),
-    birthdate: new FormControl(''),
-    password: new FormControl(''),
-    passwordConfirm: new FormControl(''),
-  });
 
   constructor(formBuilder: FormBuilder, private router: Router) {
 
@@ -43,7 +33,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  
   }
 
   submitForm() {
@@ -57,7 +47,7 @@ export class SignupComponent implements OnInit {
 
       this.showErrors = false;
 
-      console.log('usuario creado');
+      console.log('Parametros enviados');
 
       const user = {
         iduser: 0,

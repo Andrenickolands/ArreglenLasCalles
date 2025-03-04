@@ -7,45 +7,14 @@
         <form [formGroup]="signUpUserForm">
             <div class="inputPosition top40">
 
-                <!-- <app-inpt-principal
-                  id="name" 
-                  placeholder="Nombre completo" 
-                  [control]="signUpUserForm.controls.name">
-                </app-inpt-principal>
-                <app-inpt-email
-                  id="name" 
-                  placeholder="correo" 
-                  [control]="signUpUserForm.controls.email">
-                </app-inpt-email>
-                <app-inpt-date
-                  id="name" 
-                  placeholder="fecha de nacimiento" 
-                  [control]="signUpUserForm.controls.birthdate">
-                </app-inpt-date>
-                <app-inpt-principal
-                  id="country" 
-                  placeholder="País" 
-                  [control]="signUpUserForm.controls.country">
-                </app-inpt-principal>
-                <app-inpt-password
-                  id="country" 
-                  placeholder="Contraseña" 
-                  [control]="signUpUserForm.controls.password">
-                </app-inpt-password>
-                <app-inpt-password
-                  id="country" 
-                  placeholder="Confirmar ontraseña" 
-                  [control]="signUpUserForm.controls.passwordConfirm">
-                </app-inpt-password> -->
-
                 <div class="inputSpace">
                     <div class="requisito"
                         *ngIf="showErrors && (signUpUserForm.get('name')?.dirty || signUpUserForm.get('name')?.touched && signUpUserForm.get('name')?.invalid)">
-                        <span *ngIf="signUpUserForm.get('name')?.hasError('required')">
+                        <span *ngIf="signUpUserForm.get('name')?.errors?.['required']">
                             El campo es requerido
                         </span>
                         <br class="salto">
-                        <span *ngIf="signUpUserForm.get('name')?.hasError('onlyLetters')">
+                        <span *ngIf="signUpUserForm.get('name')?.errors?.['onlyLetters']">
                             No pueden ser números o símbolos
                         </span>
                     </div>
@@ -124,6 +93,37 @@
                             class="input">
                     </div>
                 </div>
+                
+                <!-- <app-inpt-principal
+                  id="name" 
+                  placeholder="Nombre completo" 
+                  [control]="signUpUserForm.controls.name">
+                </app-inpt-principal>
+                <app-inpt-email
+                  id="name" 
+                  placeholder="correo" 
+                  [control]="signUpUserForm.controls.email">
+                </app-inpt-email>
+                <app-inpt-date
+                  id="name" 
+                  placeholder="fecha de nacimiento" 
+                  [control]="signUpUserForm.controls.birthdate">
+                </app-inpt-date>
+                <app-inpt-principal
+                  id="country" 
+                  placeholder="País" 
+                  [control]="signUpUserForm.controls.country">
+                </app-inpt-principal>
+                <app-inpt-password
+                  id="country" 
+                  placeholder="Contraseña" 
+                  [control]="signUpUserForm.controls.password">
+                </app-inpt-password>
+                <app-inpt-password
+                  id="country" 
+                  placeholder="Confirmar ontraseña" 
+                  [control]="signUpUserForm.controls.passwordConfirm">
+                </app-inpt-password> -->
 
                 <div class="btnPostion btnTop btnSpace">
                     <div class="btn">
