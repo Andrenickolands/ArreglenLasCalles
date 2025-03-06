@@ -79,8 +79,23 @@
     /*28px*/
     font-size: 28px;
     cursor: pointer;
-
     font-optical-sizing: auto;
+    font-style: normal;
+}
 
+.btnSecundary{
+    width: 260px;
+    height: 62px;
+    background-color: transparent;
+    border: 2px;
+    stroke: var(--color);
+    border-radius: 18px;
+    font-weight: bolder;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 28px;
+    cursor: pointer;
+    font-optical-sizing: auto;
     font-style: normal;
 }
