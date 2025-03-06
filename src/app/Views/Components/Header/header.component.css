@@ -104,6 +104,7 @@ input::-moz-search-cancel {
     font-weight: 800;
     transition: color 0.3s;
     cursor: pointer;
+    user-select: none;
 }
 
 .container-nav a:hover,
