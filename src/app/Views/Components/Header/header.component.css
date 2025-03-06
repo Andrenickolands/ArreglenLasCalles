@@ -1,0 +1,94 @@
+.main-head {
+    padding-top: -12px;
+    padding-bottom: -12px;
+}
+
+.container-header {
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: var(--textInput);
+}
+
+.inputSpace {
+    padding-left: 16%;
+}
+
+.input {
+    text-align: left;
+    background-color: var(--black);
+    color: var(--textInputPress);
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 301px;
+    height: 52px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 800;
+}
+
+input:focus {
+    background-color: var(--black);
+    color: var(--textInputPress);
+}
+
+.inputSpace {
+
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.container-nav {
+    display: flex;
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.container-nav ul {
+    position: relative;
+    display: flex;
+    margin-left: 16%;
+}
+
+.container-nav li {
+    margin: 0 50px;
+}
+
+.color {
+    color: var(--red);
+}
+
+.text {
+    color: var(--TextWhite);
+}
+
+.container-nav a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.container-nav a:hover,
+.container-nav a.active {
+    color: var(--color);
+}

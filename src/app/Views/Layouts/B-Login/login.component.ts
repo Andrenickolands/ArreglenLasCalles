@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         console.log('logeado');
 
         const user: userLogin = {
-          iduser: 0,
+          id: 0,
           email: this.loginForm.get('email')?.value,
           password: this.loginForm.get('password')?.value
         }

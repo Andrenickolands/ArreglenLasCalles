@@ -1,5 +1,5 @@
 .w {
-    color: #C4C4C4;
+    color: var(--TextWhite);
     width: 60%;
 }
 
@@ -63,7 +63,7 @@
 .btnTerciary {
     border: transparent;
     background-color: transparent;
-    color: var(--TextBtnWhite);
+    color: var(--TextWhite);
     font-weight: 800;
     /*28px*/
     font-size: 20px;

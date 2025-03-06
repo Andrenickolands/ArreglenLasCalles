@@ -27,16 +27,16 @@ export class AceptTermsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.user = {
-        id: Number(params.get('id') || '0'),
-        name: params.get('name') || '',
-        email: params.get('email') || '',
-        country: params.get('country') || '',
-        birthdate: params.get('birthdate') || new Date(),
-        password: params.get('password') || '',
-        passwordConfirm: params.get('passwordConfirm') || '',
-        aceptTyCUser: params.get('aceptTyCUser') === 'true'
-      };
+      // this.user = {
+      //   id: Number(params.get('id') || '0'),
+      //   name: params.get('name') || '',
+      //   email: params.get('email') || '',
+      //   country: params.get('country') || '',
+      //   // birthdate: params.get('birthdate') || new Date(),
+      //   password: params.get('password') || '',
+      //   passwordConfirm: params.get('passwordConfirm') || '',
+      //   aceptTyCUser: params.get('aceptTyCUser') === 'true'
+      // };
     });
 
   }
