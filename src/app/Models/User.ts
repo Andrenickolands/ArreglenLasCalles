@@ -1,5 +1,5 @@
 export interface User {
-    iduser?: number;
+    id?: number;
     name: string;
     email: string;
     country: string;
@@ -10,7 +10,7 @@ export interface User {
 }
 
 export interface UserPost {
-    iduser?: number;
+    id?: number;
     name: string;
     email: string;
     country: string;

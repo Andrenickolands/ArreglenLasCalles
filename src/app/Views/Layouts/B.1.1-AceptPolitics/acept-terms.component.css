@@ -4,7 +4,7 @@
 }
 
 .text {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 500;
     text-align: left;
     display: inline-block;
@@ -30,7 +30,7 @@
 }
 
 .btnSpace {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
 }
 
 .btnTop {
@@ -57,5 +57,17 @@
 
     font-optical-sizing: auto;
 
+    font-style: normal;
+}
+
+.btnTerciary {
+    border: transparent;
+    background-color: transparent;
+    color: var(--TextBtnWhite);
+    font-weight: 800;
+    /*28px*/
+    font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
     font-style: normal;
 }
