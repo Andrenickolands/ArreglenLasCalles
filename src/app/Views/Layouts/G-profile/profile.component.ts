@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { HeaderSesionComponent } from "../../Components/Header/Header-sesion/header-sesion.component";
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [HeaderSesionComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
