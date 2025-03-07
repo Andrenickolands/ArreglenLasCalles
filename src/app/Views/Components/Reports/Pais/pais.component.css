@@ -1,0 +1,162 @@
+.containerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+.spaceText {
+    margin-top: 4%;
+}
+
+.listContainer {
+    margin-top: -80px;
+    overflow-y: auto;
+    width: 100%;
+    height: 188px;
+    margin-top: -14px;
+    padding-right: 10px;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer y Edge */
+}
+
+.listContainer::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari y Edge */
+}
+
+.Space {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 8%;
+    cursor: pointer;
+}
+
+.listSpace {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
+
+.reportSpaceText {
+    margin-top: -15%;
+}
+
+.color {
+    color: var(--color);
+}
+
+.colorText {
+    color: var(--TextWhite);
+}
+
+.red {
+    color: var(--red);
+}
+
+/* País */
+.h2 {
+    text-align: center;
+    font-size: 30px;
+    /* extrabold */
+    font-weight: 800;
+}
+
+/* num reportes */
+.h3 {
+    margin-top: -2%;
+    text-align: center;
+    font-size: 30px;
+    /* bold */
+    font-weight: 700;
+}
+
+/* Ciudades */
+.h4 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* Reportes de huecos en sus calles */
+.h5 {
+    margin-top: -4.8%;
+    text-align: center;
+    font-size: 18px;
+    /* semibold */
+    font-weight: 600;
+}
+
+/* Ciudad */
+.h6 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Num de reportes ciudad */
+.p {
+    text-align: left;
+    font-size: 16px;
+    /* regular */
+    font-weight: 400;
+}
+
+.btnSpace {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    padding-top: 6px;
+    padding-bottom: 80px;
+    width: 422px;
+    background-color: var(--background);
+}
+
+.btn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnRed {
+    width: 220px;
+    height: 56px;
+    background-color: var(--red);
+    border-radius: 16px;
+    color: var(--textBtn);
+    font-weight: 900;
+    /*28px*/
+    font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnRed:hover,
+.btnRed:active {
+    width: 218px;
+    height: 56px;
+}
+
+.i {
+    margin-top: 18px;
+    padding-left: 30px;
+}
+
+.icon {
+    fill: var(--Icons);
+    transition: fill 0.3s ease;
+}
+
+.icon:hover,
+.icon:active {
+    fill: var(--color);
+}

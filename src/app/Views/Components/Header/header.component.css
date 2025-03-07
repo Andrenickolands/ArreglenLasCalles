@@ -126,7 +126,6 @@ input::-moz-search-cancel {
     border: 2px solid var(--color);
     stroke: var(--color);
     border-radius: 18px;
-    font-weight: bolder;
     color: var(--color);
     font-weight: 800;
     /*28px*/
@@ -145,7 +144,6 @@ input::-moz-search-cancel {
     stroke: var(--color);
     opacity: 96%;
     border-radius: 18px;
-    font-weight: bolder;
     color: var(--color);
     font-weight: 800;
     /*28px*/

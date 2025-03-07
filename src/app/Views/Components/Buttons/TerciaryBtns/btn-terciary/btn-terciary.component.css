@@ -1,0 +1,24 @@
+.btnTerciary {
+    border: transparent;
+    background-color: transparent;
+    color: var(--TextWhite);
+    font-weight: 800;
+    /*28px*/
+    font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnTerciary:hover,
+.btnTerciary:active {
+    border: transparent;
+    background-color: transparent;
+    color: var(--TextWhite);
+    font-weight: 800;
+    /*28px*/
+    font-size: 19px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

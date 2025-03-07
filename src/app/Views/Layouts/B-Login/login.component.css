@@ -73,29 +73,63 @@
     height: 62px;
     background-color: var(--color);
     border-radius: 18px;
-    font-weight: bolder;
     color: var(--textBtn);
     font-weight: 800;
     /*28px*/
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
-.btnSecundary{
-    width: 260px;
+.btnPrincipal:hover,
+.btnPrincipal:active {
+    width: 256px;
     height: 62px;
-    background-color: transparent;
-    border: 2px;
-    stroke: var(--color);
+    background-color: var(--color);
     border-radius: 18px;
-    font-weight: bolder;
     color: var(--textBtn);
     font-weight: 800;
     /*28px*/
-    font-size: 28px;
+    font-size: 24.2px;
     cursor: pointer;
     font-optical-sizing: auto;
     font-style: normal;
+}
+
+.btn-P-Line{
+    width: 260px;
+    height: 62px;
+    background-color: transparent;
+    border: 2px solid var(--color);
+    stroke: var(--color);
+    border-radius: 18px;
+    color: var(--color);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btn-P-Line:hover,
+.btn-P-Line:active {
+    width: 256px;
+    height: 62px;
+    background-color: transparent;
+    border: 3px solid var(--color);
+    stroke: var(--color);
+    border-radius: 18px;
+    color: var(--color);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+    opacity: 96%;
+
+    border: 3px solid var(--color);
+    stroke: var(--color);
 }

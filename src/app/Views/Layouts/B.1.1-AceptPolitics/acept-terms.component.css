@@ -52,11 +52,24 @@
     color: var(--textBtn);
     font-weight: 800;
     /*28px*/
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
-
     font-optical-sizing: auto;
+    font-style: normal;
+}
 
+.btnPrincipal:hover,
+.btnPrincipal:active {
+    width: 256px;
+    height: 62px;
+    background-color: var(--color);
+    border-radius: 18px;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24.2px;
+    cursor: pointer;
+    font-optical-sizing: auto;
     font-style: normal;
 }
 
@@ -67,6 +80,19 @@
     font-weight: 800;
     /*28px*/
     font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnTerciary:hover,
+.btnTerciary:active {
+    border: transparent;
+    background-color: transparent;
+    color: var(--TextWhite);
+    font-weight: 800;
+    /*28px*/
+    font-size: 19px;
     cursor: pointer;
     font-optical-sizing: auto;
     font-style: normal;

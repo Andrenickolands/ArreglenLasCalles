@@ -10,9 +10,9 @@
     --TextP: #6A6868;
     --textBtn: #3B3B3B;
     --TextWhite: #C4C4C4;
+    --Icons: #A0A0A0;
     
     --white: #FCFCFC;
-    --tonoLigero: #d7dbdd;
 }
 
 /*  */
@@ -69,7 +69,7 @@ a {
 }
 
 .requisito {
-    color: var(--rojo);
+    color: var(--red);
     font-size: 18px;
     font-weight: 800;
     display: block;
@@ -79,8 +79,8 @@ a {
 }
 
 .border-danger {
-    color: var(--rojo);
-    border: 2px solid var(--rojo); /* Cambia el color a tu preferencia */
+    color: var(--red);
+    border: 2px solid var(--red); /* Cambia el color a tu preferencia */
 }
 
 /* /////////////////// Spaces //////////////////// */
