@@ -1,5 +1,5 @@
-<body>
-    <div class="container colum top140">
+<div>
+    <div class="container colum top80">
         <div class="">
             <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_147_914)">
@@ -22,13 +22,13 @@
 
         <div class="btnSpace btnPostion btnTop">
             <div class="btn">
-                <button routerLink="/Home" (click)="signUp()" type="submit" class="btn-principal">Aceptar</button>
+                <button routerLink="/Home" (click)="acept()" type="submit" class="btnPrincipal">Aceptar</button>
             </div>
-            <div class="btnSpace btnPostion">
-                <div class="btn2">
-                    <button routerLink="/Home" type="submit" class="btn-terciary">Volver</button>
+            <div class="btnTop">
+                <div class="btn">
+                    <button (click)="goBack()" type="submit" class="btnTerciary">Volver</button>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>

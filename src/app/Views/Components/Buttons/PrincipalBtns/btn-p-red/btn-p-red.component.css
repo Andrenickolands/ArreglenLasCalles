@@ -1,0 +1,19 @@
+.btnRed {
+    width: 220px;
+    height: 56px;
+    background-color: var(--red);
+    border-radius: 16px;
+    color: var(--textBtn);
+    font-weight: 900;
+    /*28px*/
+    font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnRed:hover,
+.btnRed:active {
+    width: 218px;
+    height: 56px;
+}

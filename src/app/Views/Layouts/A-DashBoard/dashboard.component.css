@@ -1,0 +1,10 @@
+* {
+    overflow: hidden;
+}
+
+.containerInfo {
+    width: 422px;
+    height: 90%;
+    background-color: var(--background);
+    position: absolute;
+}

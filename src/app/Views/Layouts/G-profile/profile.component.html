@@ -1,1 +1,100 @@
-<p>profile works!</p>
+<div>
+    <app-header-sesion></app-header-sesion>
+    <div>
+        <div>
+
+        </div>
+        <div class="inputPosition top40">
+            <div class="inputSpace">
+                <div class="requisito"
+                    *ngIf="showErrors && (signUpUserForm.get('name')?.dirty || signUpUserForm.get('name')?.touched && signUpUserForm.get('name')?.invalid)">
+                    <span *ngIf="signUpUserForm.get('name')?.errors?.['required']">
+                        El campo es requerido
+                    </span>
+                    <br class="salto">
+                    <span *ngIf="signUpUserForm.get('name')?.errors?.['onlyLetters']">
+                        No pueden ser números o símbolos
+                    </span>
+                </div>
+                <input type="text" formControlName="name" placeholder="Nombre completo" class="input">
+            </div>
+
+            <div class="inputSpace">
+                <div class="requisito"
+                    *ngIf="showErrors && (signUpUserForm.get('email')?.dirty || signUpUserForm.get('email')?.touched && signUpUserForm.get('email')?.invalid)">
+                    <span *ngIf="signUpUserForm.get('email')?.hasError('required')">
+                        El campo es requerido
+                    </span>
+                    <br class="salto">
+                    <span *ngIf="signUpUserForm.get('email')?.hasError('email')">
+                        Debe ser un email válido
+                    </span>
+                </div>
+                <input type="email" formControlName="email" placeholder="Correo electrónico" class="input">
+            </div>
+
+            <div class="inputSpace">
+                <div class="requisito"
+                    *ngIf="showErrors && (signUpUserForm.get('country')?.dirty || signUpUserForm.get('country')?.touched && signUpUserForm.get('country')?.invalid)">
+                    <span *ngIf="signUpUserForm.get('country')?.hasError('required')">
+                        El campo es requerido
+                    </span>
+                    <br class="salto">
+                    <span *ngIf="signUpUserForm.get('country')?.hasError('onlyLetters')">
+                        No pueden ser números o símbolos
+                    </span>
+                </div>
+                <input type="text" formControlName="country" placeholder="País" class="input">
+            </div>
+
+            <div class="inputSpace">
+                <div class="requisito"
+                    *ngIf="showErrors && (signUpUserForm.get('birthdate')?.dirty || signUpUserForm.get('birthdate')?.touched && signUpUserForm.get('birthdate')?.invalid)">
+                    <span *ngIf="signUpUserForm.get('birthdate')?.hasError('required')">
+                        El campo es requerido
+                    </span>
+                </div>
+                <input type="date" formControlName="birthdate" placeholder="Fecha de nacimiento" class="input">
+            </div>
+
+            <div class="colum w">
+                <p class="text">La contraseña debe contener minimo 8 carácteres, al menos una mayúscula,
+                    minúscula, números y símbolos ($%&*)</p>
+
+                <div class="inputSpace">
+                    <div class="requisito"
+                        *ngIf="showErrors && (signUpUserForm.get('newPassword')?.dirty || signUpUserForm.get('newPassword')?.touched && signUpUserForm.get('newPassword')?.invalid)">
+                        <span *ngIf="signUpUserForm.get('newPassword')?.hasError('required')">
+                            El campo es requerido
+                        </span>
+                        <br class="salto">
+                        <span *ngIf="signUpUserForm.get('newPassword')?.hasError('passw')">
+                            La contraseña no cumple con los requisitos
+                        </span>
+                    </div>
+                    <input type="password" formControlName="newPassword" placeholder="Ingresa tu contraseña"
+                        class="input">
+                </div>
+
+                <div class="inputSpace">
+                    <div class="requisito"
+                        *ngIf="showErrors && (signUpUserForm.get('newPasswordAgain')?.dirty || signUpUserForm.get('newPasswordAgain')?.touched && signUpUserForm.get('newPasswordAgain')?.invalid)">
+                        <span *ngIf="signUpUserForm.get('newPasswordAgain')?.hasError('required')">
+                            El campo es requerido
+                        </span>
+                        <br class="salto">
+                        <span *ngIf="signUpUserForm.get('newPasswordAgain')?.hasError('mustBeEqual')">
+                            La contraseñas no coinciden
+                        </span>
+                    </div>
+                    <input type="password" formControlName="newPasswordAgain" placeholder="Confirma tu contraseña"
+                        class="input">
+                </div>
+        </div>
+        <div class="btnSpace">
+            <div class="btn">
+                <button type="submit" class="btnPrincipal">Volver</button>
+            </div>
+        </div>
+    </div>
+</div>

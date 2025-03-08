@@ -1,77 +1,74 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
-import { CustomValidators } from '../../../../Communs/Custom-validators';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { CommonModule, Location } from '@angular/common';
 import { User } from '../../../Models/User';
 
 @Component({
   selector: 'app-acept-terms',
-  imports: [],
+  imports: [RouterLink, CommonModule],
   templateUrl: './acept-terms.component.html',
   styleUrl: './acept-terms.component.css'
 })
 export class AceptTermsComponent implements OnInit {
-  signUpUserForm: FormGroup;
-  showErrors: boolean = false;
+  user: User;
 
-  constructor(formBuilder: FormBuilder, private router: Router) {
-
-    this.signUpUserForm = formBuilder.group({
-      name: ["", Validators.required, CustomValidators.onlyLetters],
-      email: ["", Validators.required, Validators.email],
-      country: ["", Validators.required, CustomValidators.onlyLetters],
-      birthdate: ["", Validators.required],
-      password: ["", Validators.required, Validators.minLength(8), CustomValidators.passw],
-      passwordConfirm: ["", Validators.required, CustomValidators.mustBeEqual('password', 'passwordConfirm')],
-      aceptTyCUser: ["", Validators.required],
-    })
+  constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
+    this.user = {
+      id: 0,
+      name: '',
+      email: '',
+      country: '',
+      birthdate: new Date(),
+      password: '',
+      passwordConfirm: '',
+      aceptTyCUser: false
+    };
   }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      // this.user = {
+      //   id: Number(params.get('id') || '0'),
+      //   name: params.get('name') || '',
+      //   email: params.get('email') || '',
+      //   country: params.get('country') || '',
+      //   // birthdate: params.get('birthdate') || new Date(),
+      //   password: params.get('password') || '',
+      //   passwordConfirm: params.get('passwordConfirm') || '',
+      //   aceptTyCUser: params.get('aceptTyCUser') === 'true'
+      // };
+    });
+
   }
 
   submitForm() {
-    this.signUpUserForm.markAllAsTouched();
-    this.signUp();
+    this.acept;
+  }
+
+  acept() {
+    this.user.aceptTyCUser = true;
+
   }
 
   signUp() {
 
-    if (this.signUpUserForm.valid) {
+    // const user: User = {
+    //   id: 0,
+    //   name: this.signUpUserForm.get('name')?.value,
+    //   email: this.signUpUserForm.get('email')?.value,
+    //   country: this.signUpUserForm.get('country')?.value,
+    //   birthdate: this.signUpUserForm.get('birthdate')?.value,
+    //   password: this.signUpUserForm.get('password')?.value,
+    //   passwordConfirm: this.signUpUserForm.get('passwordConfirm')?.value,
+    //   aceptTyCUser: this.signUpUserForm.get('aceptTyCUser')?.value
+    // }
 
-      this.showErrors = false;
-
-      console.log('usuario creado');
-
-      const user: User = {
-        iduser: 0,
-        name: this.signUpUserForm.get('name')?.value,
-        email: this.signUpUserForm.get('email')?.value,
-        country: this.signUpUserForm.get('country')?.value,
-        birthdate: this.signUpUserForm.get('birthdate')?.value,
-        password: this.signUpUserForm.get('password')?.value,
-        passwordConfirm: this.signUpUserForm.get('passwordConfirm')?.value,
-        aceptTyCUser: this.signUpUserForm.get('aceptTyCUser')?.value
-      }
-
-      console.log('persona');
-      console.log(user);
-
-      console.log('form');
-      console.log(this.signUpUserForm);
-
-      this.router.navigateByUrl('/Acept-terms');
-
-    } else {
-      this.showErrors = true;
-      return;
-    }
+    // this.router.navigateByUrl('/Acept-terms');
 
   }
 
-
-
+  goBack(): void {
+    this.location.back();
+  }
 
 }
