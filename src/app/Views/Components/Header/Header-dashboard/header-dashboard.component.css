@@ -4,11 +4,15 @@
 }
 
 .container-header {
-    width: 92%;
+    position: fixed;
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
 .logo {
