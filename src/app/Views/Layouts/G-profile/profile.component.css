@@ -1,0 +1,119 @@
+.body {
+    scrollbar-width: none;
+    transform: scale(0.9);
+    min-height: 90vh;
+}
+
+.inputPosition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputSpace {
+    padding-bottom: 28px;
+}
+
+::placeholder {
+    color: var(--textInput);
+}
+
+.input {
+    text-align: left;
+    background-color: var(--black);
+    color: var(--textInputPress);
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 520px;
+    height: 70px;
+    padding-left: 20px;
+    font-weight: 800;
+}
+
+.input[type="date"]{
+    color: var(--textInput);
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+input[type="email"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--black) inset;
+    -webkit-text-fill-color: var(--textInput); 
+}
+
+
+input[type="email"]:focus {
+    background-color: var(--black); 
+    color: var(--textInputPress); 
+}
+
+.btnPostion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btnSpace {
+    padding-bottom: 80px;
+}
+
+.btnTop {
+    padding-top: 38px;
+}
+
+.btn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnPrincipal {
+    width: 260px;
+    height: 62px;
+    background-color: var(--color);
+    border-radius: 18px;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnPrincipal:hover,
+.btnPrincipal:active {
+    width: 256px;
+    height: 62px;
+    background-color: var(--color);
+    border-radius: 18px;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24.2px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.w {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 51%;
+}
+
+.text {
+    font-size: 18px;
+    font-weight: 800;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--TextP);
+}

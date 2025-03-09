@@ -7,12 +7,12 @@
         <div class="inputPosition top40">
             <div class="inputSpace">
                 <div class="requisito"
-                    *ngIf="showErrors && (signUpUserForm.get('name')?.dirty || signUpUserForm.get('name')?.touched && signUpUserForm.get('name')?.invalid)">
-                    <span *ngIf="signUpUserForm.get('name')?.errors?.['required']">
+                    *ngIf="showErrors && (ProfileForm.get('name')?.dirty || ProfileForm.get('name')?.touched && ProfileForm.get('name')?.invalid)">
+                    <span *ngIf="ProfileForm.get('name')?.errors?.['required']">
                         El campo es requerido
                     </span>
                     <br class="salto">
-                    <span *ngIf="signUpUserForm.get('name')?.errors?.['onlyLetters']">
+                    <span *ngIf="ProfileForm.get('name')?.errors?.['onlyLetters']">
                         No pueden ser números o símbolos
                     </span>
                 </div>
@@ -21,12 +21,12 @@
 
             <div class="inputSpace">
                 <div class="requisito"
-                    *ngIf="showErrors && (signUpUserForm.get('email')?.dirty || signUpUserForm.get('email')?.touched && signUpUserForm.get('email')?.invalid)">
-                    <span *ngIf="signUpUserForm.get('email')?.hasError('required')">
+                    *ngIf="showErrors && (ProfileForm.get('email')?.dirty || ProfileForm.get('email')?.touched && ProfileForm.get('email')?.invalid)">
+                    <span *ngIf="ProfileForm.get('email')?.hasError('required')">
                         El campo es requerido
                     </span>
                     <br class="salto">
-                    <span *ngIf="signUpUserForm.get('email')?.hasError('email')">
+                    <span *ngIf="ProfileForm.get('email')?.hasError('email')">
                         Debe ser un email válido
                     </span>
                 </div>
@@ -35,12 +35,12 @@
 
             <div class="inputSpace">
                 <div class="requisito"
-                    *ngIf="showErrors && (signUpUserForm.get('country')?.dirty || signUpUserForm.get('country')?.touched && signUpUserForm.get('country')?.invalid)">
-                    <span *ngIf="signUpUserForm.get('country')?.hasError('required')">
+                    *ngIf="showErrors && (ProfileForm.get('country')?.dirty || ProfileForm.get('country')?.touched && ProfileForm.get('country')?.invalid)">
+                    <span *ngIf="ProfileForm.get('country')?.hasError('required')">
                         El campo es requerido
                     </span>
                     <br class="salto">
-                    <span *ngIf="signUpUserForm.get('country')?.hasError('onlyLetters')">
+                    <span *ngIf="ProfileForm.get('country')?.hasError('onlyLetters')">
                         No pueden ser números o símbolos
                     </span>
                 </div>
@@ -49,8 +49,8 @@
 
             <div class="inputSpace">
                 <div class="requisito"
-                    *ngIf="showErrors && (signUpUserForm.get('birthdate')?.dirty || signUpUserForm.get('birthdate')?.touched && signUpUserForm.get('birthdate')?.invalid)">
-                    <span *ngIf="signUpUserForm.get('birthdate')?.hasError('required')">
+                    *ngIf="showErrors && (ProfileForm.get('birthdate')?.dirty || ProfileForm.get('birthdate')?.touched && ProfileForm.get('birthdate')?.invalid)">
+                    <span *ngIf="ProfileForm.get('birthdate')?.hasError('required')">
                         El campo es requerido
                     </span>
                 </div>
@@ -63,12 +63,12 @@
 
                 <div class="inputSpace">
                     <div class="requisito"
-                        *ngIf="showErrors && (signUpUserForm.get('newPassword')?.dirty || signUpUserForm.get('newPassword')?.touched && signUpUserForm.get('newPassword')?.invalid)">
-                        <span *ngIf="signUpUserForm.get('newPassword')?.hasError('required')">
+                        *ngIf="showErrors && (ProfileForm.get('newPassword')?.dirty || ProfileForm.get('newPassword')?.touched && ProfileForm.get('newPassword')?.invalid)">
+                        <span *ngIf="ProfileForm.get('newPassword')?.hasError('required')">
                             El campo es requerido
                         </span>
                         <br class="salto">
-                        <span *ngIf="signUpUserForm.get('newPassword')?.hasError('passw')">
+                        <span *ngIf="ProfileForm.get('newPassword')?.hasError('passw')">
                             La contraseña no cumple con los requisitos
                         </span>
                     </div>
@@ -78,12 +78,12 @@
 
                 <div class="inputSpace">
                     <div class="requisito"
-                        *ngIf="showErrors && (signUpUserForm.get('newPasswordAgain')?.dirty || signUpUserForm.get('newPasswordAgain')?.touched && signUpUserForm.get('newPasswordAgain')?.invalid)">
-                        <span *ngIf="signUpUserForm.get('newPasswordAgain')?.hasError('required')">
+                        *ngIf="showErrors && (ProfileForm.get('newPasswordAgain')?.dirty || ProfileForm.get('newPasswordAgain')?.touched && ProfileForm.get('newPasswordAgain')?.invalid)">
+                        <span *ngIf="ProfileForm.get('newPasswordAgain')?.hasError('required')">
                             El campo es requerido
                         </span>
                         <br class="salto">
-                        <span *ngIf="signUpUserForm.get('newPasswordAgain')?.hasError('mustBeEqual')">
+                        <span *ngIf="ProfileForm.get('newPasswordAgain')?.hasError('mustBeEqual')">
                             La contraseñas no coinciden
                         </span>
                     </div>

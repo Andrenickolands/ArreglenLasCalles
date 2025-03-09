@@ -50,7 +50,7 @@ export class SignupComponent implements OnInit {
       console.log('Parametros enviados');
 
       const user = {
-        iduser: 0,
+        id: 0,
         name: this.signUpUserForm.get('name')?.value,
         email: this.signUpUserForm.get('email')?.value,
         country: this.signUpUserForm.get('country')?.value,
@@ -65,7 +65,7 @@ export class SignupComponent implements OnInit {
       console.log('form');
       console.log(this.signUpUserForm);
 
-      this.router.navigate(['/Acept-terms', user.iduser, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]); 
+      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]); 
 
     } else {
       this.showErrors = true;

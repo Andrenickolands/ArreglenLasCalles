@@ -9,10 +9,15 @@ export interface User {
     aceptTyCUser: boolean;
 }
 
-export interface UserPost {
+export interface UserP {
     id?: number;
     name: string;
     email: string;
     country: string;
     birthdate: Date;
+}
+
+export interface passwordUser {
+    password: string;
+    passwordConfirm: string;
 }
