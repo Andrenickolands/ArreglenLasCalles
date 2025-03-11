@@ -1,8 +1,28 @@
-.body {
-    scrollbar-width: none;
-    transform: scale(0.9);
-    min-height: 90vh;
+.position{
+    margin-top: -7px;
 }
+
+.porfilePosition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+.profile{
+  width: 233px;
+  height: 233px;
+  background-color: var(--black);
+  border-radius: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    margin-left: 5.3%;
+    margin-top: 5.5%;
+    background-color: transparent;
+}
+
 
 .inputPosition {
     display: flex;
@@ -13,10 +33,6 @@
 
 .inputSpace {
     padding-bottom: 28px;
-}
-
-::placeholder {
-    color: var(--textInput);
 }
 
 .input {
@@ -33,6 +49,10 @@
     font-weight: 800;
 }
 
+.inputColor{
+    color: var(--textInputPress);
+}
+
 .input[type="date"]{
     color: var(--textInput);
 }
@@ -45,7 +65,6 @@ input[type="email"]:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px var(--black) inset;
     -webkit-text-fill-color: var(--textInput); 
 }
-
 
 input[type="email"]:focus {
     background-color: var(--black); 
