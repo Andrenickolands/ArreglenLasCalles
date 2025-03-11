@@ -1,41 +1,41 @@
-    <!-- HEADER -->
-    <div class="header">
-        <img src="" alt="">
-        <div class="search_home">
-            <img class="search_icon" src="../../../../Assets/Logo/Logo_img.png" alt="">
-            <input class="search_section" type="text" id="search_home" placeholder="Buscar">
+<!-- HEADER -->
+<div class="header">
+    <img [src]="" alt="">
+    <div class="search_home">
+        <img class="search_icon" [src]="'../../../../Assets/Logo/Logo_img.png'" alt="">
+        <input class="search_section" type="text" id="search_home" placeholder="Buscar">
+    </div>
+    <div class="navigation">
+        <a routerLink="/">Inicio</a>
+        <a routerLink="/reportes">Ver reportes</a>
+        <a routerLink="/ayuda">Ayuda</a>
+    </div>
+    <div class="hambuguer_menu">
+        <img [src]="'../../../../Assets/Logo/hamburguer.png'" alt="">
+    </div>
+</div>
+
+<!-- MAIN SECTION -->
+<div class="container">
+    <div class="info-section" *ngIf="datos">
+        <div class="country_report">
+            <h2 class="countryName">{{ datos?.country }}</h2>
+            <p>{{ datos.numerocountry }}</p>
+            <p>Reportes de huecos en sus calles</p>
         </div>
-        <div class="navigation">
-            <a href="#">Inicio</a>
-            <a href="#">Ver reportes</a>
-            <a href="#">Ayuda</a>
+
+        <div class="city_report">
+            <h2>Ciudades</h2>
+            <p>{{ datos.ciudad1 }}</p>
+            <p><span class="num_city1">{{ datos.numero1 }} </span> reportes de huecos en las calles</p>
+            <p>{{ datos?.ciudad2 }}</p>
+            <p><span class="num_city2">{{ datos.numero2 }} </span> reportes de huecos en las calles</p>
         </div>
-        <div class="hambuguer_menu">
-            <img src="../../../../Assets/Logo/hamburguer.png" alt="">
+        <div class="report_btn">
+            <button type="submit">Reportar Hueco</button>
         </div>
     </div>
-
-    <!-- MAIN SECTION -->
-
-    <div class="container">
-        <div class="info-section">
-            <div class="country_report">
-                <h2>País</h2>
-                <p>2000</p>
-                <p>Reportes de huecos en sus calles</p>
-            </div>
-
-            <div class="city_report">
-                <h2>Ciudades</h2>
-                <p>ciudad 1</p>
-                <p><span class="num_city1">Num </span> reportes de huecos en las calles</p>
-                <p>ciudad 2</p>
-                <p><span class="num_city2">Num </span> reportes de huecos en las calles</p>
-            </div>
-            <div class="report_btn">
-                <button type="submit">Reportar Hueco</button>
-            </div>
-        </div>
+    <div class="maps">
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7953.326118062753!2d-74.11876906570242!3d4.6540410747946135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b8e3f0b6cd7%3A0x2751387a49099904!2sCiudad%20Salitre%2C%20Teusaquillo%2C%20Bogot%C3%A1%2C%20Bogota!5e0!3m2!1sen!2sco!4v1698713434561!5m2!1sen!2sco" width="900" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-
-
+</div>
