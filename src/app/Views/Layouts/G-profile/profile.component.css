@@ -35,6 +35,10 @@
     padding-bottom: 28px;
 }
 
+::placeholder {
+    color: var(--textInputPress);
+}
+
 .input {
     text-align: left;
     background-color: var(--black);
@@ -49,12 +53,8 @@
     font-weight: 800;
 }
 
-.inputColor{
-    color: var(--textInputPress);
-}
-
 .input[type="date"]{
-    color: var(--textInput);
+    color: var(--textInputPress);
 }
 
 .input[type="date"]::-webkit-calendar-picker-indicator {
@@ -69,6 +69,10 @@ input[type="email"]:-webkit-autofill {
 input[type="email"]:focus {
     background-color: var(--black); 
     color: var(--textInputPress); 
+}
+
+input[type="password"]::placeholder {
+    color: var(--textInput);
 }
 
 .btnPostion {

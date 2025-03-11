@@ -64,12 +64,12 @@
 
             <div class="inputSpace">
                 <div class="requisito"
-                    *ngIf="showErrors && (ProfileForm.get('newPassword')?.dirty || ProfileForm.get('newPassword')?.touched && ProfileForm.get('newPassword')?.invalid)">
+                    *ngIf="showErrors && (ProfileForm.get('Password')?.dirty || ProfileForm.get('Password')?.touched && ProfileForm.get('Password')?.invalid)">
                     <span *ngIf="ProfileForm.get('newPassword')?.hasError('required')">
                         El campo es requerido
                     </span>
                     <br class="salto">
-                    <span *ngIf="ProfileForm.get('newPassword')?.hasError('passw')">
+                    <span *ngIf="ProfileForm.get('Password')?.hasError('passw')">
                         La contraseña no cumple con los requisitos
                     </span>
                 </div>
