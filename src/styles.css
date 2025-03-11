@@ -115,5 +115,9 @@ input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+ul {
+    list-style: none; /* Quita los puntos */
+}
+
 /*BREAKPOINTS*/
 @media screen and (max-width: 650px) {}
