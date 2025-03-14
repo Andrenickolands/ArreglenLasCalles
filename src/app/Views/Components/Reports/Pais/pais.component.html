@@ -1,7 +1,7 @@
-<div class="containerText">
-    <div class="spaceText">
-        <h2 class="h2 color">País</h2>
-        <h3 class="h3 red">num</h3>
+<div class="containerText" *ngIf="datos">
+    <div class="spaceText" >
+        <h2 class="h2 color">{{datos.country}}</h2>
+        <h3 class="h3 red">{{datos.numerocountry}}</h3>
         <h5 class="h5 colorText"> Reportes de huecos en sus calles</h5>
     </div>
     <div>
@@ -9,8 +9,8 @@
         <div class="listContainer">
             <div class="Space">
                 <div class="listSpace">
-                    <span class="h6 colorText">Ciudad</span>
-                    <span class="p colorText reportSpaceText"> <span class="red">Num</span> reportes de huecos en las
+                    <span class="h6 colorText">{{datos.ciudad1}}</span>
+                    <span class="p colorText reportSpaceText"> <span class="red">{{datos.numero1}}</span> reportes de huecos en las
                         calles</span>
                 </div>
                 <i class="i">
