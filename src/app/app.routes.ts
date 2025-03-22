@@ -16,6 +16,7 @@ import { CreateReportComponent } from './Views/Layouts/C.2.2-create-report/creat
 import { HelpComponent } from './Views/Layouts/F-help/help.component';
 import { ProfileComponent } from './Views/Layouts/G-profile/profile.component';
 import { SearchComponent } from './Views/Layouts/E-Search/search.component';
+import { paisComponent } from './Views/Components/Reports/Pais/pais.component';
 
 
 
@@ -28,6 +29,7 @@ export const routes: Routes = [
     {path:"Home", component: HomeComponent},
     {path:"Help", component: HelpComponent},
     {path:"Profile", component: ProfileComponent},
+    {path:"Pais", component: paisComponent},
     {path:"Search", component: SearchComponent},
     {path:"Reports", component: ReportsComponent},
     {path:"Report", component: ReportComponent},
@@ -37,6 +39,6 @@ export const routes: Routes = [
     {path:"Add-report", component: AddReportComponent},
     {path:"Pin-select", component: PinSelectComponent},
     {path:"Create-report", component: CreateReportComponent},
-    {path: "", component: HomeComponent},
+    {path: "", component: paisComponent},
     {path:"**", redirectTo:"", pathMatch:"full"},
 ];

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CountrysService } from '../../../../services/country.service';
 
@@ -10,7 +9,7 @@ import { CountrysService } from '../../../../services/country.service';
   templateUrl: './pais.component.html',
   styleUrls: ['./pais.component.css']
 })
-export class paisComponent implements OnInit {
+export class PaisComponent implements OnInit {  
   datos: any = {};
 
   constructor(private countryService: CountrysService) {}
