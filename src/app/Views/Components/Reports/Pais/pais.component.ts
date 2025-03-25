@@ -9,7 +9,7 @@ import { CountrysService } from '../../../../services/country.service';
   templateUrl: './pais.component.html',
   styleUrls: ['./pais.component.css']
 })
-export class PaisComponent implements OnInit {  
+export class paiscomponent implements OnInit {  
   datos: any = {};
 
   constructor(private countryService: CountrysService) {}

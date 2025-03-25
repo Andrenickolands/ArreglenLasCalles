@@ -16,7 +16,7 @@ import { CreateReportComponent } from './Views/Layouts/C.2.2-create-report/creat
 import { HelpComponent } from './Views/Layouts/F-help/help.component';
 import { ProfileComponent } from './Views/Layouts/G-profile/profile.component';
 import { SearchComponent } from './Views/Layouts/E-Search/search.component';
-import { paisComponent } from './Views/Components/Reports/Pais/pais.component';
+import { paisComponent } from './Views/Components/Reports/Pais/Pais.Component';
 
 
 

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaisComponent } from './pais.component';
+import { PaisComponent } from './Pais.Component';
 
 describe('PaisComponent', () => {
   let component: PaisComponent;

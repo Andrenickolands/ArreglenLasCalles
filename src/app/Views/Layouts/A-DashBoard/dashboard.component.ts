@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from "../../Components/Footer/footer.component";
-import { PaisComponent } from "../../Components/Reports/Pais/pais.component";
+import { PaisComponent } from "../../Components/Reports/Pais/Pais.Component";
 import { HeaderDashboardComponent } from "../../Components/Header/Header-dashboard/header-dashboard.component";
 
 @Component({
