@@ -23,5 +23,4 @@ public class CustomerController {
         return service.getAll();
     }
 
-//comentarios
 }
