@@ -1,0 +1,46 @@
+CREATE DATABASE ArreglarLasCalles;
+USE ArreglarLasCalles;
+CREATE TABLE usuario (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(80) NOT NULL,
+    Correo VARCHAR(100) UNIQUE NOT NULL,
+    Pais VARCHAR(50) NOT NULL,
+    Contraseña VARCHAR(20),
+    Acepta BOOLEAN NOT NULL,
+    FechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE EstadoDeHueco (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion VARCHAR(100) NOT NULL,
+    Estado BOOLEAN,
+    ReporteId INT NOT NULL,
+    UsuarioId VARCHAR(80) NOT NULL
+);
+CREATE TABLE Reporte (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fechaCreacion VARCHAR(100) NOT NULL,
+    Ubicacion BOOLEAN,
+    Direccion INT NOT NULL
+    Barrio VARCHAR(50) NOT NULL,
+    localidad VARCHAR(50) NOT NULL,
+    Ciudad VARCHAR(50) NOT NULL,
+    Pais VARCHAR(50) NOT NULL,
+    ImagenId INT NOT NULL,
+    EstadoId INT NOT NULL,
+    UsuarioId INT NOT NULL,
+    ImportanciaId INT NOT NULL,
+    Categoria INT NOT NULL
+
+);
+CREATE TABLE Imagen (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    url VARCHAR(100) NOT NULL,
+    ReporteId INT NOT NULL
+
+);
+CREATE TABLE Importancia (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nivel VARCHAR(100) NOT NULL
+
+);
