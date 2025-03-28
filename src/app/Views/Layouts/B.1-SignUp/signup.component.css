@@ -12,11 +12,8 @@
 }
 
 .inputSpace {
-    padding-bottom: 28px;
-}
-
-::placeholder {
-    color: var(--textInput);
+    position: relative;
+    padding-bottom: 10px;
 }
 
 .input {
@@ -31,6 +28,57 @@
     height: 70px;
     padding-left: 20px;
     font-weight: 800;
+    cursor: text;
+}
+
+.input::placeholder {
+    color: transparent;
+    user-select: none;
+}
+
+.input:placeholder-shown~.input_label {
+    position: absolute;
+    cursor: text;
+    font-size: 1rem;
+    color: var(--textInput);
+    font-weight: 800;
+    font-size: 20px;
+    background-color: transparent;
+    margin-left: 1rem;
+    margin-top: -3rem;
+}
+
+label,
+.input:focus~.input_label {
+    position: absolute;
+    margin-top: -5.55rem;
+    margin-left: -0.2rem;
+    display: block;
+    font-weight: 800;
+    font-size: 20px;
+    background-color: var(--background);
+    color: var(--textInput);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0 0 8px 0;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+.position{
+    position: relative;
+}
+
+.input_icon {
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    right: 1.5rem;
+    top: 1.6rem;
+}
+
+.input_icon.hide {
+    opacity: 100%;
 }
 
 .input[type="date"]{
@@ -108,6 +156,10 @@ input[type="email"]:focus {
     align-items: center;
     justify-content: center;
     width: 51%;
+}
+
+.p {
+    margin-top: -0.6rem;
 }
 
 .text {

@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
 
   inputType: string = 'password';
   loginForm: FormGroup;
-  hasError: boolean = false;
-
 
   constructor(formBuilder: FormBuilder, private router: Router) {
     this.loginForm = formBuilder.group({

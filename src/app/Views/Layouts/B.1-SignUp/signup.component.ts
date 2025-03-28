@@ -19,6 +19,7 @@ import { InptPasswordComponent } from '../../Components/Inputs/inpt-password/inp
 export class SignupComponent implements OnInit {
   signUpUserForm: FormGroup;
   showErrors: boolean = false;
+  inputType: string = 'password';
 
   constructor(formBuilder: FormBuilder, private router: Router) {
 
@@ -27,8 +28,8 @@ export class SignupComponent implements OnInit {
       email: ["", Validators.required, Validators.email],
       country: ["", Validators.required, CustomValidators.onlyLetters],
       birthdate: ["", Validators.required],
-      password: ["", Validators.required, Validators.minLength(8), CustomValidators.passw],
-      passwordConfirm: ["", Validators.required, CustomValidators.mustBeEqual('password', 'passwordConfirm')],
+      newPassword: ["", Validators.required, Validators.minLength(8), CustomValidators.passw],
+      passwordConfirm: ["", Validators.required, CustomValidators.mustBeEqual('newPassword', 'passwordConfirm')],
     })
   }
 
@@ -39,6 +40,15 @@ export class SignupComponent implements OnInit {
   submitForm() {
     this.signUpUserForm.markAllAsTouched();
     this.signUp();
+  }
+
+  isFieldInvalid(fieldName: string): boolean {
+    const field = this.signUpUserForm.get(fieldName);
+    return field ? (field.invalid && (field.dirty || field.touched)) : false;
+  }
+
+  togglePasswordVisibility() {
+    this.inputType = this.inputType === 'password' ? 'text' : 'password';
   }
 
   signUp() {
