@@ -59,8 +59,8 @@
                             </ng-container>
                         </span>
                     </div>
-                    <div>
-                        <input type="password" id="inputPassword" aria-describedby="password" formControlName="password"
+                    <div class="position">
+                        <input [type]="inputType"  id="inputPassword" aria-describedby="password" formControlName="password"
                             placeholder="Ingresa tu contraseña"
                             [ngClass]="{'input': true, 'border-danger': isFieldInvalid('password')}" ngNoTouched>
                         <label for="password" class="input_label">Ingresa tu contraseña</label>
@@ -94,8 +94,8 @@
                     </div>
                 </div>
                 <div class="inputPosition">
-                    <div class="buttonClean">
-                        <a routerLink="/registrate-usuario" class="buttonR">Olvidaste tu contraseña</a>
+                    <div class="btnClean">
+                        <a routerLink="/Lost-passwore" class="buttonR">Olvidaste tu contraseña</a>
                     </div>
                 </div>
 
@@ -107,7 +107,7 @@
 
                 <div>
                     <div class="btn btnTop2">
-                        <button routerLink="/Signup" type="submit" class="btn-P-Line">Registrate</button>
+                        <button (click)="navigateToPage()" type="submit" class="btn-P-Line">Registrate</button>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ import { SearchComponent } from './Views/Layouts/E-Search/search.component';
 export const routes: Routes = [
     {path:"Dashboard", component: DashboardComponent},
     {path:"Login", component: LoginComponent},
-    {path:"Signup/:id/:name/:email/:country/:birthdate/:password/:passwordConfirm", component: SignupComponent},
+    {path:"Signup", component: SignupComponent},
     {path:"Acept-terms", component: AceptTermsComponent},
     {path:"Lost-passwore", component: LostpassworeComponent},
     {path:"Home", component: HomeComponent},

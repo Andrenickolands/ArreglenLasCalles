@@ -36,24 +36,10 @@ export class LoginComponent implements OnInit {
     return field ? (field.invalid && (field.dirty || field.touched)) : false;
   }
 
-  onSubmit() {
+  login() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
       // Aquí puedes agregar la lógica de inicio de sesión
-      // Por ejemplo, this.router.navigate(['/dashboard']);
-    } else {
-      // Marcar todos los campos como tocados para mostrar errores de validación
-      Object.keys(this.loginForm.controls).forEach(field => {
-        const control = this.loginForm.get(field);
-        control?.markAsTouched();
-      });
-    }
-  }
-
-  login() {
-    this.loginForm.markAllAsTouched();
-
-    if (this.loginForm.valid) {
       console.log('logeado');
 
       const user: userLogin = {
@@ -70,9 +56,19 @@ export class LoginComponent implements OnInit {
 
       this.router.navigateByUrl('/Home');
       this.loginForm.reset();
-    } else {
 
+      // Por ejemplo, this.router.navigate(['/dashboard']);
+    } else {
+      // Marcar todos los campos como tocados para mostrar errores de validación
+      Object.keys(this.loginForm.controls).forEach(field => {
+        const control = this.loginForm.get(field);
+        control?.markAsTouched();
+      });
     }
+  }
+
+  navigateToPage() {
+    this.router.navigate(['/Signup']);
   }
 
   togglePasswordVisibility() {
