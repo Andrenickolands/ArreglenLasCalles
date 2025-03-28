@@ -37,6 +37,14 @@ export const routes: Routes = [
     {path:"Add-report", component: AddReportComponent},
     {path:"Pin-select", component: PinSelectComponent},
     {path:"Create-report", component: CreateReportComponent},
-    {path: "", component: LoginComponent    },
+    {path: "", component: DashboardComponent},
     {path:"**", redirectTo:"", pathMatch:"full"},
 ];
+
+// const GuardRoute: Routes = [
+//     { 
+//       path: 'user/:id', 
+//       component: SignupComponent,
+//       canActivate: [AuthGuard] 
+//     }
+// ];

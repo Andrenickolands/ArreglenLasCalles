@@ -2,16 +2,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
-import { InptPrincipalComponent } from '../../Components/Inputs/inpt-principal/inpt-principal.component';
-import { InptDateComponent } from '../../Components/Inputs/inpt-date/inpt-date.component';
-import { InptEmailComponent } from '../../Components/Inputs/inpt-email/inpt-email.component';
-import { InptPasswordComponent } from '../../Components/Inputs/inpt-password/inpt-password.component';
 
 @Component({
   selector: 'app-signup',
-  imports: [CommonModule, ReactiveFormsModule, /*InptPrincipalComponent, InptDateComponent, InptEmailComponent, InptPasswordComponent */],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
@@ -34,8 +30,9 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+
   }
+
 
   submitForm() {
     this.signUpUserForm.markAllAsTouched();
@@ -75,7 +72,7 @@ export class SignupComponent implements OnInit {
       console.log('form');
       console.log(this.signUpUserForm);
 
-      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]); 
+      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]);
 
     } else {
       this.showErrors = true;

@@ -144,8 +144,8 @@
 
                 <div class="btnPostion btnTop btnSpace">
                     <div class="btn">
-                        <button type="submit" class="btnPrincipal" (click)="signUp()"
-                            id="btnRegistrate">Registrarse</button>
+                        <button id="btnRegistrate" class="btnPrincipal" (click)="signUp()" type="submit"
+                            [disabled]="!signUpUserForm.valid">Registrarse</button>
                     </div>
                 </div>
             </div>
