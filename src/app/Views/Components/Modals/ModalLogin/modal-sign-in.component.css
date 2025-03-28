@@ -1,0 +1,112 @@
+.modalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40%;
+    position: absolute;
+    padding: 1rem 0.5rem 2.5rem 0.5rem;
+    background-color: var(--black);
+    z-index: 4;
+    border-radius: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.text{
+    color: var(--TextWhite);
+    font-size: 28px;
+    font-weight: 500;
+    padding-inline: 2.5rem;
+    background-color: transparent;
+}
+
+.spaceBtns {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    background-color: var(--black);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--black);
+}
+
+.btnSecundary {
+    width: 160px;
+    height: 42px;
+    background-color: transparent;
+    border: 2px solid var(--color);
+    stroke: var(--color);
+    border-radius: 12px;
+    color: var(--color);
+    font-weight: 800;
+    /*28px*/
+    font-size: 22px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnSecundary:hover,
+.btnSecundary:active {
+    width: 156px;
+    height: 42px;
+    background-color: transparent;
+    border: 3px solid var(--color);
+    stroke: var(--color);
+    opacity: 96%;
+    border-radius: 12px;
+    color: var(--color);
+    font-weight: 800;
+    /*28px*/
+    font-size: 22px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnPrincipal {
+    width: 160px;
+    height: 42px;
+    background-color: var(--color);
+    border-radius: 12px;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnPrincipal:hover,
+.btnPrincipal:active {
+    width: 156px;
+    height: 42px;
+    background-color: var(--color);
+    border-radius: 12px;
+    color: var(--textBtn);
+    font-weight: 800;
+    /*28px*/
+    font-size: 24.2px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

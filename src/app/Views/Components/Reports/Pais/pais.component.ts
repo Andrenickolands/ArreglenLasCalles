@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './pais.component.css'
 })
 export class PaisComponent {
+  constructor(){
+
+  }
+
+  NavigateToAddReport() {
+    
+  }
 
 }
