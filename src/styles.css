@@ -11,7 +11,7 @@
     --textBtn: #3B3B3B;
     --TextWhite: #C4C4C4;
     --Icons: #A0A0A0;
-    
+
     --white: #FCFCFC;
 }
 
@@ -27,16 +27,17 @@
 /* /////////////////// TEXTS //////////////////// */
 
 /*INPUTS*/
-input{
+input {
     border: none;
 }
+
 /* TITULO */
 h1 {
-    
+
     font-optical-sizing: auto;
     text-transform: uppercase;
     font-style: normal;
-    
+
     /*18px*/
     font-size: 1.125rem;
     font-weight: 800;
@@ -46,7 +47,7 @@ h1 {
 .tittle {
     font-optical-sizing: auto;
     font-style: normal;
-    
+
     /*32px*/
     font-size: 18px;
     font-weight: 800;
@@ -72,18 +73,50 @@ a {
 }
 
 .requisito {
+    position: relative;
     color: var(--red);
     font-size: 18px;
     font-weight: 800;
     display: block;
     margin-top: 0;
-    padding-bottom: 1em;
-    padding-left: 0.5em;
+    margin-left: 0.34rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
 }
 
-.border-danger {
+.input.border_danger {
     color: var(--red);
-    border: 2px solid var(--red); /* Cambia el color a tu preferencia */
+    border: 2px solid var(--red);
+}
+
+.input:placeholder-shown~.input_label.border_dangers {
+    position: absolute;
+    cursor: text;
+    font-size: 1rem;
+    color: var(--red);
+    font-weight: 800;
+    font-size: 20px;
+    background-color: transparent;
+    margin-left: 1rem;
+    margin-top: -3rem;
+}
+
+label,
+.input:focus~.input_label.border_dangers {
+    position: absolute;
+    margin-top: -5.55rem;
+    margin-left: -0.2rem;
+    display: block;
+    font-weight: 800;
+    font-size: 20px;
+    background-color: var(--background);
+    color: var(--red);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0 0 8px 0 ;
+    transition: 0.1s;
+    z-index: 1;
 }
 
 /* /////////////////// Spaces //////////////////// */
@@ -116,7 +149,8 @@ input:-webkit-autofill {
 }
 
 ul {
-    list-style: none; /* Quita los puntos */
+    list-style: none;
+    /* Quita los puntos */
 }
 
 /*BREAKPOINTS*/
