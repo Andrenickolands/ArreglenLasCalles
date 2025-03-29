@@ -10,19 +10,8 @@ import { CountrysService } from '../../../../services/country.service';
   templateUrl: './pais.component.html',
   styleUrls: ['./pais.component.css']
 })
-<<<<<<< HEAD
 export class HomeComponent implements OnInit {
   datos: any = {};
-=======
-export class PaisComponent {
-  constructor(){
-
-  }
-
-  NavigateToAddReport() {
-    
-  }
->>>>>>> 7a57fe3962866eca2a8be9348e7e9ba64b908bde
 
   constructor(private countrysService: CountrysService) {}
 
