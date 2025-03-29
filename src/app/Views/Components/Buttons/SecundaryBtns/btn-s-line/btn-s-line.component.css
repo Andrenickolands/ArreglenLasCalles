@@ -1,0 +1,39 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnSecundary {
+    width: 160px;
+    height: 42px;
+    background-color: transparent;
+    border: 2px solid var(--color);
+    stroke: var(--color);
+    border-radius: 12px;
+    color: var(--color);
+    font-weight: 800;
+    /*28px*/
+    font-size: 22px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnSecundary:hover,
+.btnSecundary:active {
+    width: 152px;
+    height: 42px;
+    background-color: transparent;
+    border: 3px solid var(--color);
+    stroke: var(--color);
+    opacity: 96%;
+    border-radius: 12px;
+    color: var(--color);
+    font-weight: 800;
+    /*28px*/
+    font-size: 22px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

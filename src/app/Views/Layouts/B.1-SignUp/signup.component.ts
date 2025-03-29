@@ -2,16 +2,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
-import { InptPrincipalComponent } from '../../Components/Inputs/inpt-principal/inpt-principal.component';
-import { InptDateComponent } from '../../Components/Inputs/inpt-date/inpt-date.component';
-import { InptEmailComponent } from '../../Components/Inputs/inpt-email/inpt-email.component';
-import { InptPasswordComponent } from '../../Components/Inputs/inpt-password/inpt-password.component';
 
 @Component({
   selector: 'app-signup',
-  imports: [CommonModule, ReactiveFormsModule, /*InptPrincipalComponent, InptDateComponent, InptEmailComponent, InptPasswordComponent */],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
@@ -19,6 +15,7 @@ import { InptPasswordComponent } from '../../Components/Inputs/inpt-password/inp
 export class SignupComponent implements OnInit {
   signUpUserForm: FormGroup;
   showErrors: boolean = false;
+  inputType: string = 'password';
 
   constructor(formBuilder: FormBuilder, private router: Router) {
 
@@ -27,18 +24,28 @@ export class SignupComponent implements OnInit {
       email: ["", Validators.required, Validators.email],
       country: ["", Validators.required, CustomValidators.onlyLetters],
       birthdate: ["", Validators.required],
-      password: ["", Validators.required, Validators.minLength(8), CustomValidators.passw],
-      passwordConfirm: ["", Validators.required, CustomValidators.mustBeEqual('password', 'passwordConfirm')],
+      newPassword: ["", Validators.required, Validators.minLength(8), CustomValidators.passw],
+      passwordConfirm: ["", Validators.required, CustomValidators.mustBeEqual('newPassword', 'passwordConfirm')],
     })
   }
 
   ngOnInit(): void {
-  
+
   }
+
 
   submitForm() {
     this.signUpUserForm.markAllAsTouched();
     this.signUp();
+  }
+
+  isFieldInvalid(fieldName: string): boolean {
+    const field = this.signUpUserForm.get(fieldName);
+    return field ? (field.invalid && (field.dirty || field.touched)) : false;
+  }
+
+  togglePasswordVisibility() {
+    this.inputType = this.inputType === 'password' ? 'text' : 'password';
   }
 
   signUp() {
@@ -65,7 +72,7 @@ export class SignupComponent implements OnInit {
       console.log('form');
       console.log(this.signUpUserForm);
 
-      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]); 
+      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]);
 
     } else {
       this.showErrors = true;

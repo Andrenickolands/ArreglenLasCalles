@@ -1,0 +1,14 @@
+<div class="modalContainer overlay" [hidden]="!mostrar">
+    <div class="modal">
+        <h6 class="text">Para continuar inicia sesión o registrate</h6>
+        <div class="spaceBtns">
+            <div class="btn">
+                <button (click)="close()" class="btnSecundary">Cancelar</button>
+            </div>
+            
+            <div class="btn">
+                <button (click)="navigateToLogin()" class="btnPrincipal">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
