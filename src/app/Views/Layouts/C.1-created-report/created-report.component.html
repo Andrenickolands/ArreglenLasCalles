@@ -1,0 +1,128 @@
+<body>
+    <app-header-sesion></app-header-sesion>
+
+    <div class="container colum">
+        <div class="containerGallery top80">
+            
+        </div>
+
+        <form [formGroup]="form">
+            <div class="inputPosition">
+                <div class="containerInpts top20">
+                    <div class="inputSpace">
+                        <div class="requisito">
+                            <span *ngIf="isFieldInvalid('direction')">
+                                <ng-container *ngIf="form.get('direction')?.errors?.['required']">
+                                    Este campo es obligatorio
+                                </ng-container>
+                            </span>
+                        </div>
+                        <div>
+                            <input type="text" id="inputDirection" aria-describedby="direction" formControlName="direction"
+                                placeholder="Dirección"
+                                [ngClass]="{'input': true,'border_danger': isFieldInvalid('direction')}" ngNoTouched>
+                            <label for="name" class="input_label">Dirección</label>
+                        </div>
+                    </div>
+
+                    <div class="inputSpace">
+                        <div class="requisito">
+                            <span *ngIf="isFieldInvalid('neighborhood')">
+                                <ng-container *ngIf="form.get('neighborhood')?.errors?.['required']">
+                                    Este campo es obligatorio
+                                </ng-container>
+                            </span>
+                        </div>
+                        <div>
+                            <input type="text" id="inputNeighborhood" aria-describedby="neighborhood" formControlName="neighborhood"
+                                placeholder="Barrio"
+                                [ngClass]="{'input': true,'border_danger': isFieldInvalid('neighborhood')}" ngNoTouched>
+                            <label for="neighborhood" class="input_label">Barrio</label>
+                        </div>
+                    </div>
+
+                    <div class="inputSpace">
+                        <div class="requisito">
+                            <span *ngIf="isFieldInvalid('sector')">
+                                <ng-container *ngIf="form.get('sector')?.errors?.['required']">
+                                    Este campo es obligatorio
+                                </ng-container>
+                            </span>
+                        </div>
+                        <div>
+                            <input type="text" id="inputSector" aria-describedby="sector" formControlName="sector"
+                                placeholder="Localidad / sector / estado"
+                                [ngClass]="{'input': true,'border_danger': isFieldInvalid('sector')}" ngNoTouched>
+                            <label for="sector" class="input_label">Localidad / sector / estado</label>
+                        </div>
+                    </div>
+
+                    <div class="inputSpace">
+                        <div class="requisito">
+                            <span *ngIf="isFieldInvalid('city')">
+                                <ng-container *ngIf="form.get('city')?.errors?.['required']">
+                                    Este campo es obligatorio
+                                </ng-container>
+                            </span>
+                        </div>
+                        <div>
+                            <input type="text" id="inputCity" aria-describedby="city" formControlName="city"
+                                placeholder="Ciudad"
+                                [ngClass]="{'input': true,'border_danger': isFieldInvalid('city')}" ngNoTouched>
+                            <label for="city" class="input_label">Ciudad</label>
+                        </div>
+                    </div>
+
+                    <div class="inputSpace">
+                        <div class="requisito">
+                            <span *ngIf="isFieldInvalid('country')">
+                                <ng-container *ngIf="form.get('country')?.errors?.['required']">
+                                    Este campo es obligatorio
+                                </ng-container>
+                            </span>
+                        </div>
+                        <div>
+                            <input type="text" id="inputCountry" aria-describedby="country" formControlName="country"
+                                placeholder="País"
+                                [ngClass]="{'input': true,'border_danger': isFieldInvalid('country')}" ngNoTouched>
+                            <label for="country" class="input_label">País</label>
+                        </div>
+                    </div>
+
+                    <div class="inputSpace">
+                        <div class="requisito">
+                            <span *ngIf="isFieldInvalid('dateReport')">
+                                <ng-container *ngIf="form.get('dateReport')?.errors?.['required']">
+                                    Este campo es obligatorio
+                                </ng-container>
+                            </span>
+                        </div>
+                        <div>
+                            <input type="date" id="inputDateReport" aria-describedby="dateReport" formControlName="dateReport"
+                                placeholder="Fecha último reporte"
+                                [ngClass]="{'input': true,'border_danger': isFieldInvalid('dateReport')}" ngNoTouched>
+                            <!-- <label for="dateReport" class="input_label">Fecha último reporte</label> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="containerInpts">
+         
+        </div>
+
+        <div class="containerBtns">
+            <div class="btnSpace">
+                <div class="btn">
+                    <button id="btnRegistrate" class="btnGreen" (click)="Vote()" type="submit"
+                        [disabled]="!form.valid">Arreglado</button>
+                </div>
+                <div class="btn">
+                    <button id="btnRegistrate" class="btnRed" (click)="Vote()" type="submit"
+                        [disabled]="!form.valid">Sigue ahí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

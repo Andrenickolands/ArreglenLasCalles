@@ -1,0 +1,146 @@
+.body {
+    scrollbar-width: none;
+    transform: scale(0.9);
+    min-height: 90vh;
+}
+
+.containerGallery {
+    width: 73%;
+    height: 30rem;
+    border-radius: 18px;
+    background-color: var(--black);
+}
+
+.containerInpts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.05rem 3rem;
+}
+
+.inputPosition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputSpace {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.input {
+    text-align: left;
+    background-color: var(--black);
+    color: var(--textInputPress);
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 520px;
+    height: 70px;
+    padding-left: 20px;
+    font-weight: 800;
+    cursor: text;
+}
+
+.input::placeholder {
+    color: transparent;
+    user-select: none;
+}
+
+.input:placeholder-shown~.input_label {
+    position: absolute;
+    cursor: text;
+    font-size: 1rem;
+    color: var(--textInput);
+    font-weight: 800;
+    font-size: 20px;
+    background-color: transparent;
+    margin-left: 1rem;
+    margin-top: -3rem;
+}
+
+label,
+.input:focus~.input_label {
+    position: absolute;
+    margin-top: -5.55rem;
+    margin-left: -0.2rem;
+    display: block;
+    font-weight: 800;
+    font-size: 20px;
+    background-color: var(--background);
+    color: var(--textInput);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0 0 8px 0;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+.input[type="date"]{
+    color: var(--textInput);
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+.containerBtns {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnSpace {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 4rem;
+    margin-top: 26px;
+    gap: 3rem;
+}
+
+.btn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnRed {
+    width: 220px;
+    height: 56px;
+    background-color: var(--red);
+    border-radius: 16px;
+    color: var(--textBtn);
+    font-weight: 900;
+    /*28px*/
+    font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnGreen {
+    width: 220px;
+    height: 56px;
+    background-color: var(--green);
+    border-radius: 16px;
+    color: var(--textBtn);
+    font-weight: 900;
+    /*28px*/
+    font-size: 20px;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btnGreen:hover,
+.btnRed:hover,
+.btnGreen:active,
+.btnRed:active {
+    width: 218px;
+    height: 56px;
+}
