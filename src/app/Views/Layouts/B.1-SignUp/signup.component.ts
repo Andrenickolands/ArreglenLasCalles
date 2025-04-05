@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
         email: this.signUpUserForm.get('email')?.value,
         country: this.signUpUserForm.get('country')?.value,
         birthdate: this.signUpUserForm.get('birthdate')?.value,
-        password: this.signUpUserForm.get('password')?.value,
+        newPassword: this.signUpUserForm.get('newPassword')?.value,
         passwordConfirm: this.signUpUserForm.get('passwordConfirm')?.value,
       }
 
@@ -72,7 +72,7 @@ export class SignupComponent implements OnInit {
       console.log('form');
       console.log(this.signUpUserForm);
 
-      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.password, user.passwordConfirm, user.email]);
+      this.router.navigate(['/Acept-terms', user.id, user.name, user.email, user.country, user.birthdate, user.newPassword, user.passwordConfirm, user.email]);
 
     } else {
       this.showErrors = true;

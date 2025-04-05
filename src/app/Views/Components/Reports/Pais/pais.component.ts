@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { CountrysService } from '../../../../services/country.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-pais',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pais.component.html',
   styleUrls: ['./pais.component.css']
 })
-export class HomeComponent implements OnInit {
+export class PaisComponent implements OnInit {
   datos: any = {};
 
   constructor(private countrysService: CountrysService) {}
