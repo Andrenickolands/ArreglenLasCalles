@@ -44,3 +44,29 @@ CREATE TABLE Importancia (
     nivel VARCHAR(100) NOT NULL
 
 );
+
+Comando llaves foraneas:
+
+SELECT usuario.Id, Reporte.UsuarioId
+FROM usuario
+INNER JOIN Reporte ON usuario.Id = Reporte.UsuarioId;
+
+SELECT Reporte.ImportanciaId, EstadoDeHueco.id
+FROM Reporte
+INNER JOIN EstadoDeHueco ON Reporte.ImportanciaId = EstadoDeHueco.id;
+
+SELECT Reporte.ImagenId, Imagen.id
+FROM Reporte
+INNER JOIN Imagen ON Reporte.ImagenId = Imagen.id;
+
+SELECT Reporte.EstadoId, EstadoDeHueco.id
+FROM Reporte
+INNER JOIN EstadoDeHueco ON Reporte.EstadoId = EstadoDeHueco.id;
+
+SELECT Reporte.id, EstadoDeHueco.ReporteId
+FROM Reporte
+INNER JOIN EstadoDeHueco ON Reporte.id = EstadoDeHueco.ReporteId;
+
+SELECT EstadoDeHueco.id, Importancia.id
+FROM EstadoDeHueco
+INNER JOIN Importancia ON EstadoDeHueco.id = Importancia.id;
