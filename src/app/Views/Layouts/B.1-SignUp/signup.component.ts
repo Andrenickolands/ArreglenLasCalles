@@ -14,8 +14,7 @@ import { CustomValidators } from '../../../../Communs/Custom-validators';
 export class SignupComponent implements OnInit {
   signUpUserForm: FormGroup;
   showErrors: boolean = false;
-  inputTypePassword: string = 'password';
-  inputTypeConfirm: string = 'password';
+  inputType: string = 'password';
 
   constructor(formBuilder: FormBuilder, private router: Router) {
 
@@ -44,12 +43,8 @@ export class SignupComponent implements OnInit {
     return field ? (field.invalid && (field.dirty || field.touched)) : false;
   }
 
-  togglePasswordVisibility(field: 'password' | 'confirm') {
-    if (field === 'password') {
-      this.inputTypePassword = this.inputTypePassword === 'password' ? 'text' : 'password';
-    } else {
-      this.inputTypeConfirm = this.inputTypeConfirm === 'password' ? 'text' : 'password';
-    }
+  togglePasswordVisibility() {
+    this.inputType = this.inputType === 'password' ? 'text' : 'password';
   }
 
   signUp() {

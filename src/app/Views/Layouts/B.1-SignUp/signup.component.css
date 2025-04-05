@@ -65,19 +65,18 @@ label,
     z-index: 1;
 }
 
-.position {
+.position{
     position: relative;
 }
 
-.input-icon {
+.input_icon {
     position: absolute;
+    cursor: pointer;
     display: block;
+    background-color: transparent;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 4;
-    background-color: transparent;
 }
 
 .input[type="date"]{

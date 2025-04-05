@@ -76,13 +76,11 @@ label,
 .input_icon {
     position: absolute;
     cursor: pointer;
+    display: block;
     background-color: transparent;
-    right: 1.5rem;
-    top: 1.6rem;
-}
-
-.input_icon.hide {
-    opacity: 100%;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .btnPostion {
