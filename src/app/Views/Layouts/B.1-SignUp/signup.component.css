@@ -65,20 +65,19 @@ label,
     z-index: 1;
 }
 
-.position{
+.position {
     position: relative;
 }
 
-.input_icon {
+.input-icon {
     position: absolute;
+    display: block;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
+    z-index: 4;
     background-color: transparent;
-    right: 1.5rem;
-    top: 1.6rem;
-}
-
-.input_icon.hide {
-    opacity: 100%;
 }
 
 .input[type="date"]{
