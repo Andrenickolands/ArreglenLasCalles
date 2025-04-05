@@ -82,8 +82,10 @@
     font-style: normal;
 }
 
+.btnPrincipal:hover,
 .btnGreen:hover,
 .btnRed:hover,
+.btnPrincipal:active,
 .btnGreen:active,
 .btnRed:active {
     width: 218px;
