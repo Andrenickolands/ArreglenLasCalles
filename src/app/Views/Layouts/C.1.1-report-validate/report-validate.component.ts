@@ -1,11 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HeaderSesionComponent } from '../../Components/Header/Header-sesion/header-sesion.component';
 
 @Component({
   selector: 'app-report-validate',
-  imports: [],
+  imports: [HeaderSesionComponent],
   templateUrl: './report-validate.component.html',
   styleUrl: './report-validate.component.css'
 })
-export class ReportValidateComponent {
+export class ReportValidateComponent implements OnInit {
+
+  valid = false;
+
+
+  ngOnInit(): void {
+ 
+  }
+
+  Foto(){
+
+  }
+
+  Arreglado(){
+    
+  }
+
+  SigueAhi(){
+    
+  }
 
 }
