@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './Views/Layouts/A-DashBoard/dashboard.component';
+//import { DashboardComponent } from './Views/Layouts/A-DashBoard/dashboard.component';
 import { LoginComponent } from './Views/Layouts/B-Login/login.component';
 import { SignupComponent } from './Views/Layouts/B.1-SignUp/signup.component';
 import { AceptTermsComponent } from './Views/Layouts/B.1.1-AceptPolitics/acept-terms.component';
@@ -16,12 +16,12 @@ import { CreateReportComponent } from './Views/Layouts/C.2.2-create-report/creat
 import { HelpComponent } from './Views/Layouts/F-help/help.component';
 import { ProfileComponent } from './Views/Layouts/G-profile/profile.component';
 import { SearchComponent } from './Views/Layouts/E-Search/search.component';
-import { paisComponent } from './Views/Components/Reports/Pais/Pais.Component';
+
 
 
 
 export const routes: Routes = [
-    {path:"Dashboard", component: DashboardComponent},
+    //{path:"Dashboard", component: DashboardComponent},
     {path:"Login", component: LoginComponent},
     {path:"Signup/:id/:name/:email/:country/:birthdate/:password/:passwordConfirm", component: SignupComponent},
     {path:"Acept-terms", component: AceptTermsComponent},
@@ -29,7 +29,6 @@ export const routes: Routes = [
     {path:"Home", component: HomeComponent},
     {path:"Help", component: HelpComponent},
     {path:"Profile", component: ProfileComponent},
-    {path:"Pais", component: paisComponent},
     {path:"Search", component: SearchComponent},
     {path:"Reports", component: ReportsComponent},
     {path:"Report", component: ReportComponent},
@@ -39,6 +38,6 @@ export const routes: Routes = [
     {path:"Add-report", component: AddReportComponent},
     {path:"Pin-select", component: PinSelectComponent},
     {path:"Create-report", component: CreateReportComponent},
-    {path: "", component: paisComponent},
+    {path: "", component: HomeComponent},
     {path:"**", redirectTo:"", pathMatch:"full"},
 ];
