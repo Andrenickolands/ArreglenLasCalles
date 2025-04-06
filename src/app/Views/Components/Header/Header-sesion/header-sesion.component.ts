@@ -1,38 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header-sesion',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './header-sesion.component.html',
   styleUrl: './header-sesion.component.css'
 })
 export class HeaderSesionComponent implements OnInit {
   isMenuOpen = false;
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
   }
 
   toggleMenu() {
-    console.log('Estado anterior:', this.isMenuOpen);
     this.isMenuOpen = !this.isMenuOpen;
-    console.log('Nuevo estado:', this.isMenuOpen);
   }
 
-  Start(){
-
+  navigateToInicio() {
+    this.router.navigate(['/Home']);
   }
 
-  WatchReports(){
-    
+  navigateToReports() {
+    this.router.navigate(['/Reports']);
   }
 
-  Profile(){
-
+  navigateToProfile() {
+    this.router.navigate(['/Profile']);
   }
 
-  Help(){
-    
+  navigateToAyuda() {
+    this.router.navigate(['/Help']);
   }
 
   Donate(){
@@ -40,7 +42,6 @@ export class HeaderSesionComponent implements OnInit {
   }
 
   LogOut(){
-    
+    this.router.navigate(['/Login']);
   }
-
 }

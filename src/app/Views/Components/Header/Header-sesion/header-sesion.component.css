@@ -129,19 +129,23 @@ input::-moz-search-cancel {
 /* ////////// Desplegable ////////// */
 
 .containerMenu {
-    position: absolute;
+    position: fixed;
     display: flex;
-    align-items: left;
-    justify-content:start;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     right: 0;
+    top: 0;
     z-index: 2;
     width: 422px;
-    height: 98%;
+    height: 100vh;
+    max-height: 100vh;
     background-color: var(--black);
     border-top-left-radius: 18px;
     border-bottom-left-radius: 18px;
     user-select: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .Icon{
@@ -161,6 +165,9 @@ input::-moz-search-cancel {
     margin-top: 2.5rem;
     margin-left: 4rem;
     background-color: var(--transparent);
+    width: calc(100% - 8rem);
+    padding-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 .fotoContainer{
@@ -180,9 +187,11 @@ input::-moz-search-cancel {
     cursor: pointer;
     text-align: left;
     font-size: 20px;
-    /* extrabold */
     font-weight: 800;
     margin-bottom: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .textMenu:hover,
@@ -212,9 +221,14 @@ input::-moz-search-cancel {
 }
 
 
-.btnPrincipal {
-    width: 180px;
+.btnPrincipal, .btnLine {
+    width: 100%;
+    max-width: 180px;
     height: 50px;
+    box-sizing: border-box;
+}
+
+.btnPrincipal {
     background-color: var(--color);
     border-radius: 16px;
     color: var(--textBtn);
@@ -232,8 +246,6 @@ input::-moz-search-cancel {
 }
 
 .btnLine {
-    width: 180px;
-    height: 50px;
     background-color: transparent;
     border-radius: 16px;
     color: var(--color);

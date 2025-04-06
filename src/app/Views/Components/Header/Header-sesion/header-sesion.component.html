@@ -1,6 +1,6 @@
 <header class="main-head ">
     <div class="container-header position">
-        <div class="logo">
+        <div class="logo" (click)="navigateToInicio()">
             <svg width="77" height="38" viewBox="0 0 77 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="24.1899" width="28.5693" height="38" rx="4" fill="#262626" />
                 <rect x="25.2993" y="1.10938" width="26.3504" height="35.781" rx="4" fill="#666262" />
@@ -36,9 +36,9 @@
 
         <nav class="container-nav">
             <ul>
-                <li><a class="text">Inicio</a></li>
-                <li><a class="color">Ver reportes</a></li>
-                <li><a class="text">Ayuda</a></li>
+                <li><a class="text" (click)="navigateToInicio()">Inicio</a></li>
+                <li><a class="color" (click)="navigateToReports()">Ver reportes</a></li>
+                <li><a class="text" (click)="navigateToAyuda()">Ayuda</a></li>
             </ul>
         </nav>
 
@@ -62,10 +62,10 @@
             <div class="fotoContainer"></div>
 
             <div class="SpaceText">
-                <h2 class="textMenu colorText" (click)="Start()">Inico</h2>
-                <h2 class="textMenu red" (click)="WatchReports()">Ver reportes</h2>
-                <h2 class="textMenu colorText" (click)="Profile()">Perfil</h2>
-                <h2 class="textMenu colorText" (click)="Help()">Ayuda</h2>
+                <h2 class="textMenu colorText" (click)="navigateToInicio()">Inicio</h2>
+                <h2 class="textMenu red" (click)="navigateToReports()">Ver reportes</h2>
+                <h2 class="textMenu colorText" (click)="navigateToProfile()">Perfil</h2>
+                <h2 class="textMenu colorText" (click)="navigateToAyuda()">Ayuda</h2>
             </div>
 
             <div class="spaceBtns">
