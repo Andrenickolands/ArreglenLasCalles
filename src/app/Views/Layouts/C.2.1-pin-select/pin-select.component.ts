@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from "../../Components/Footer/footer.component";
-import { HeaderDashboardComponent } from "../../Components/Header/Header-dashboard/header-dashboard.component";
+import { HeaderSesionComponent } from "../../Components/Header/Header-sesion/header-sesion.component";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pin-select',
-  imports: [FooterComponent, HeaderDashboardComponent],
+  imports: [FooterComponent, HeaderSesionComponent],
   templateUrl: './pin-select.component.html',
   styleUrl: './pin-select.component.css'
 })
@@ -20,8 +20,8 @@ export class PinSelectComponent implements OnInit {
     this.safeMapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.mapUrl);
   }
 
-  SelectPin(){
-    
+  SelectPin() {
+
   }
 
 }
