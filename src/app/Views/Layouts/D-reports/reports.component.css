@@ -1,0 +1,77 @@
+.listContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.05rem 10rem;
+}
+
+.Space {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 8%;
+    cursor: pointer;
+}
+
+.listSpace {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
+
+.reportSpaceText {
+    margin-top: -10%;
+}
+
+.color {
+    color: var(--color);
+}
+
+.colorText {
+    color: var(--TextWhite);
+}
+
+.red {
+    color: var(--red);
+}
+
+/* País */
+.h2 {
+    text-align: left;
+    margin-left: 17%;
+    font-size: 26px;
+    text-transform: capitalize;
+    /* extrabold */
+    font-weight: 800;
+}
+
+/* Ciudad */
+.h6 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Num de reportes ciudad */
+.p {
+    text-align: left;
+    font-size: 20px;
+    /* regular */
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.i {
+    margin-top: 40px;
+    padding-left: 40px;
+}
+
+.icon {
+    fill: var(--Icons);
+    transition: fill 0.3s ease;
+}
+
+.icon:hover,
+.icon:active {
+    fill: var(--color);
+}
