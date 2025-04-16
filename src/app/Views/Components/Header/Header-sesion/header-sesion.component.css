@@ -1,15 +1,14 @@
 .main-head {
-    padding-top: -12px;
-    padding-bottom: -12px;
+    padding: 0;
+    margin: 0;
 }
 
 .container-header {
     position: fixed;
+    top: 0;
     width: 100%;
-    padding-left: 2%;
-    padding-bottom: 0.4%;
-    padding-right: 4%;
-    margin: 0 auto;
+    padding: 0.5rem 4% 0.5rem 2%;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +49,6 @@
     border-radius: 12px;
     width: 320px;
     height: 52px;
-
     padding-left: 24%;
     padding-right: 20px;
 }
@@ -209,17 +207,14 @@ input::-moz-search-cancel {
 
 .spaceBtns {
     background-color: var(--transparent);
-
 }
 
 .btn2 {
-    /* border: none; */
     display: flex;
     justify-content: left;
     text-align: center;
     background-color: transparent;
 }
-
 
 .btnPrincipal, .btnLine {
     width: 100%;
@@ -233,7 +228,6 @@ input::-moz-search-cancel {
     border-radius: 16px;
     color: var(--textBtn);
     font-weight: 900;
-    /*28px*/
     font-size: 18px;
     cursor: pointer;
     font-optical-sizing: auto;
@@ -252,7 +246,6 @@ input::-moz-search-cancel {
     border: 2px solid var(--color);
     stroke: var(--color);
     font-weight: 900;
-    /*28px*/
     font-size: 16px;
     cursor: pointer;
     font-optical-sizing: auto;

@@ -11,25 +11,23 @@
     background-color: var(--black);
 }
 
+
 .containerInpts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 0.05rem 3rem;
 }
-
 .inputPosition {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
 .inputSpace {
     position: relative;
     padding-bottom: 10px;
 }
-
 .input {
     text-align: left;
     background-color: var(--black);
@@ -44,12 +42,10 @@
     font-weight: 800;
     cursor: text;
 }
-
 .input::placeholder {
     color: transparent;
     user-select: none;
 }
-
 .input:placeholder-shown~.input_label {
     position: absolute;
     cursor: text;
@@ -61,7 +57,6 @@
     margin-left: 1rem;
     margin-top: -3rem;
 }
-
 label,
 .input:focus~.input_label {
     position: absolute;
