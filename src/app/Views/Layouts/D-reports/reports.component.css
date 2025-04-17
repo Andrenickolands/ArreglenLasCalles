@@ -1,3 +1,9 @@
+.containerReports{
+    padding: 0 12rem 4rem 12rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .listContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -10,6 +16,7 @@
     justify-content: left;
     align-items: center;
     margin-bottom: 8%;
+    max-width: 500px;
     cursor: pointer;
 }
 
@@ -38,11 +45,11 @@
 /* País */
 .h2 {
     text-align: left;
-    margin-left: 17%;
-    font-size: 26px;
+    font-size: 30px;
     text-transform: capitalize;
     /* extrabold */
     font-weight: 800;
+    margin-bottom: 2rem;
 }
 
 /* Ciudad */
@@ -62,8 +69,11 @@
 }
 
 .i {
-    margin-top: 40px;
-    padding-left: 40px;
+    margin-top: 36px;
+    margin-left: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon {
@@ -71,7 +81,7 @@
     transition: fill 0.3s ease;
 }
 
-.icon:hover,
-.icon:active {
+.Space:hover .icon,
+.Space:active .icon {
     fill: var(--color);
 }

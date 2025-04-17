@@ -150,10 +150,7 @@
     height: 57px;
 }
 
-.Space:hover,
-h6:hover,
-.icon:hover {
-    color: var(--color);
+.Space:hover .icon,
+.Space:active .icon {
     fill: var(--color);
-    transition: color 0.3s ease, fill 0.3s ease;
 }
