@@ -3,10 +3,11 @@ import { FooterComponent } from "../../Components/Footer/footer.component";
 import { HeaderSesionComponent } from "../../Components/Header/Header-sesion/header-sesion.component";
 import { PaisComponent } from "../../Components/Reports/Pais/pais.component";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [FooterComponent, HeaderSesionComponent, PaisComponent],
+  imports: [FooterComponent, HeaderSesionComponent, PaisComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
