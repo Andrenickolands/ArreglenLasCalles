@@ -37,7 +37,7 @@ export const routes: Routes = [
     {path:"Add-report", component: AddReportComponent},
     {path:"Pin-select", component: PinSelectComponent},
     {path:"Create-report", component: CreateReportComponent},
-    {path: "", component: ReportComponent},
+    {path: "", component: SearchComponent},
     {path:"**", redirectTo:"", pathMatch:"full"},
 ];
 
