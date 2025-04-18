@@ -13,6 +13,36 @@
     height: calc(100vh - 16px); /* Ajusta según el tamaño de tu header y footer */
 }
 
+.containerPin {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pin {
+    border: none;
+    background-color: transparent;
+}
+
+.pin1 {
+    background-color: transparent;
+    position: absolute;
+    top: 4px;
+    left: 4px; 
+    z-index: 2;
+}
+
+.pin2 {
+    background-color: transparent;
+    z-index: 1;
+}
+
 .btn {
     border: none;
     display: flex;
@@ -21,17 +51,17 @@
     user-select: none;
 
     position: absolute;
-    bottom: 4rem;
+    bottom: 8rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 1;
     background-color: transparent;
 }
 .btnPrincipal {
-    width: 260px;
-    height: 62px;
+    width: 240px;
+    height: 56px;
     background-color: var(--color);
-    border-radius: 18px;
+    border-radius: 16px;
     color: var(--textBtn);
     font-weight: 800;
     /*28px*/
@@ -42,10 +72,10 @@
 }
 .btnPrincipal:hover,
 .btnPrincipal:active {
-    width: 256px;
-    height: 62px;
+    width: 232px;
+    height: 56px;
     background-color: var(--color);
-    border-radius: 18px;
+    border-radius: 16px;
     color: var(--textBtn);
     font-weight: 800;
     /*28px*/
