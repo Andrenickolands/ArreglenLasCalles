@@ -19,8 +19,8 @@ public class CORSFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpServletRequest request = (HttpServletRequest) servletRequest;
 
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200"); // 👈 Permite solo Angular
-        response.setHeader("Access-Control-Allow-Credentials", "true"); // 👈 Necesario si usas cookies o tokens
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+        response.setHeader("Access-Control-Allow-Credentials", "true"); //
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE, PATCH");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization");

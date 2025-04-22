@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ICountryService {
     List<Country> getAll();
+//SAVE VARIABLES CALLER
+    void save(Country country);
 }

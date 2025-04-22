@@ -18,4 +18,14 @@ public class CountryService implements ICountryService {
     public List<Country> getAll(){
         return (List<Country>) repository.findAll();
     }
+
+
+    //POST TO DB FILES
+    @Override
+    public void save(Country country) {
+        repository.save(country);
+
+    }
 }
+
+
