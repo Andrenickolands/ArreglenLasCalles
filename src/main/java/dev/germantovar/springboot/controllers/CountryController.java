@@ -5,17 +5,20 @@ import dev.germantovar.springboot.entitis.Country;
 import dev.germantovar.springboot.repository.CountryRepository;
 import dev.germantovar.springboot.services.ICountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CountryController {
+    //DEPENDENCIES FOT COUNTRY SERVICE
 
     @Autowired
     private ICountryService service;
-
+    //DEPENDENCIES FOT COUNTRY REPOSITORY
     @Autowired
     private CountryRepository countryRepository;
 
@@ -24,6 +27,34 @@ public class CountryController {
         return service.getAll();
     }
 
+    //POST DATA INTO COUNTRIES TABLE
+    @PostMapping("countries")
+    public void save (@RequestBody Country country){
+        service.save(country);
+    }
+
+    @PutMapping("api/countries/actualizar/{id}")
+    public ResponseEntity<Country> update(@PathVariable("id")long id, @RequestBody Country country){
+        Optional<Country> countrydata = countryRepository.findById(id);
+        if(countrydata.isPresent()){
+            Country _country1 = countrydata.get();
+            _country1.setCountry(country.getCountry());
+            _country1.setCiudad1(country.getCiudad1());
+            _country1.setNumerocountry(country.getNumerocountry());
+            _country1.setCiudad1(country.getCiudad1());
+            _country1.setNumero1(country.getNumero1());
+            _country1.setCiudad2(country.getCiudad2());
+            _country1.setNumero2(country.getNumero2());
+
+            return new ResponseEntity<>(countryRepository.save(_country1), HttpStatus.ACCEPTED);
+
+        }else{
+            return new ResponseEntity<>(HttpStatus.FOUND);
+        }
+
+
+    }
 
 
 }
+
