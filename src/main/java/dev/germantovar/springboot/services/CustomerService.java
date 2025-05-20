@@ -1,5 +1,6 @@
 package dev.germantovar.springboot.services;
 
+import dev.germantovar.springboot.entitis.Country;
 import dev.germantovar.springboot.entitis.Customer;
 import dev.germantovar.springboot.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,12 @@ public class CustomerService implements ICustomerService {
     @Override
     public List<Customer> getAll() {
         return (List<Customer>) repository.findAll();
+    }
+
+    //POST TO DB FILES
+    @Override
+    public void save(Customer customer) {
+        repository.save(customer);
+
     }
 }

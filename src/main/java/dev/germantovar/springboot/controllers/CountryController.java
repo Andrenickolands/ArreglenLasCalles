@@ -18,7 +18,7 @@ public class CountryController {
 
     @Autowired
     private ICountryService service;
-    //DEPENDENCIES FOT COUNTRY REPOSITORY
+    //DEPENDENCIES FOR COUNTRY REPOSITORY
     @Autowired
     private CountryRepository countryRepository;
 
