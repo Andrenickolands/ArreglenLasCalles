@@ -1,154 +1,102 @@
-<body>
-    <div class="container colum">
-        <div class="tittle top40">
-            <h2>Registrate</h2>
+<div class="container colum">
+  <div class="tittle top40">
+    <h2>Regístrate</h2>
+  </div>
+
+  <form [formGroup]="signUpUserForm" (ngSubmit)="submitForm()">
+    <div class="inputPosition top40">
+
+      <!-- Nombre -->
+      <div class="inputSpace">
+        <div class="requisito" *ngIf="isFieldInvalid('name')">
+          <span *ngIf="signUpUserForm.get('name')?.errors?.['required']">Este campo es obligatorio</span>
+          <span *ngIf="signUpUserForm.get('name')?.errors?.['onlyLetters']">Solo se permiten letras</span>
+        </div>
+        <div>
+          <input type="text" id="inputName" formControlName="name" placeholder="Nombre completo"
+            [ngClass]="{'input': true, 'border_danger': isFieldInvalid('name')}">
+          <label for="inputName" class="input_label">Nombre completo</label>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="inputSpace">
+        <div class="requisito" *ngIf="isFieldInvalid('email')">
+          <span *ngIf="signUpUserForm.get('email')?.errors?.['required']">Este campo es obligatorio</span>
+          <span *ngIf="signUpUserForm.get('email')?.errors?.['email']">Debe ser un email válido</span>
+        </div>
+        <div>
+          <input type="email" id="inputEmail1" formControlName="email" placeholder="Ingresa tu correo"
+            [ngClass]="{'input': true, 'border_danger': isFieldInvalid('email')}">
+          <label for="inputEmail1" class="input_label">Correo electrónico</label>
+        </div>
+      </div>
+
+      <!-- País -->
+      <div class="inputSpace">
+        <div class="requisito" *ngIf="isFieldInvalid('country')">
+          <span *ngIf="signUpUserForm.get('country')?.errors?.['required']">Este campo es obligatorio</span>
+          <span *ngIf="signUpUserForm.get('country')?.errors?.['onlyLetters']">Solo se permiten letras</span>
+        </div>
+        <div>
+          <input type="text" id="inputCountry" formControlName="country" placeholder="País"
+            [ngClass]="{'input': true, 'border_danger': isFieldInvalid('country')}">
+          <label for="inputCountry" class="input_label">País</label>
+        </div>
+      </div>
+
+      <!-- Fecha de nacimiento -->
+      <div class="inputSpace">
+        <div class="requisito" *ngIf="isFieldInvalid('birthdate')">
+          <span *ngIf="signUpUserForm.get('birthdate')?.errors?.['required']">Este campo es obligatorio</span>
+        </div>
+        <div>
+          <input type="date" id="inputBirthdate" formControlName="birthdate" placeholder="Fecha de nacimiento"
+            [ngClass]="{'input': true, 'border_danger': isFieldInvalid('birthdate')}">
+        </div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="colum w">
+        <p class="text">La contraseña debe contener mínimo 8 caracteres, al menos una mayúscula, minúscula, números y símbolos ($%&*)</p>
+
+        <div class="inputSpace p">
+          <div class="requisito" *ngIf="isFieldInvalid('newPassword')">
+            <span *ngIf="signUpUserForm.get('newPassword')?.errors?.['required']">Este campo es obligatorio</span>
+            <span *ngIf="signUpUserForm.get('newPassword')?.errors?.['passw']">La contraseña no cumple con los requisitos</span>
+            <span *ngIf="signUpUserForm.get('newPassword')?.errors?.['minLength']">Mínimo 8 caracteres</span>
+          </div>
+          <div class="position">
+            <input [type]="inputType" id="inputNewPassword" formControlName="newPassword" placeholder="Ingresa tu contraseña"
+              [ngClass]="{'input': true, 'border-danger': isFieldInvalid('newPassword')}">
+            <label for="inputNewPassword" class="input_label">Ingresa tu contraseña</label>
+            <span class="input-icon" (click)="togglePasswordVisibility()">
+              <ng-container *ngIf="inputType === 'password'">👁️</ng-container>
+              <ng-container *ngIf="inputType === 'text'">🙈</ng-container>
+            </span>
+          </div>
         </div>
 
-        <form [formGroup]="signUpUserForm">
-            <div class="inputPosition top40">
+        <!-- Confirmar contraseña -->
+        <div class="inputSpace">
+          <div class="requisito" *ngIf="isFieldInvalid('passwordConfirm')">
+            <span *ngIf="signUpUserForm.get('passwordConfirm')?.errors?.['required']">Este campo es obligatorio</span>
+            <span *ngIf="signUpUserForm.get('passwordConfirm')?.errors?.['mustBeEqual']">Las contraseñas no coinciden</span>
+          </div>
+          <div class="position">
+            <input [type]="inputType" id="inputPasswordConfirm" formControlName="passwordConfirm" placeholder="Confirma tu contraseña"
+              [ngClass]="{'input': true, 'border-danger': isFieldInvalid('passwordConfirm')}">
+            <label for="inputPasswordConfirm" class="input_label">Confirma tu contraseña</label>
+          </div>
+        </div>
+      </div>
 
-                <div class="inputSpace">
-                    <div class="requisito">
-                        <span *ngIf="isFieldInvalid('name')">
-                            <ng-container *ngIf="signUpUserForm.get('name')?.errors?.['required']">
-                                Este campo es obligatorio
-                            </ng-container>
-                            <ng-container *ngIf="signUpUserForm.get('name')?.errors?.['onlyLetters']">
-                                Solo se permiten letras
-                            </ng-container>
-                        </span>
-                    </div>
-                    <div>
-                        <input type="text" id="inputName" aria-describedby="name" formControlName="name"
-                            placeholder="Nombre completo"
-                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('name')}" ngNoTouched>
-                        <label for="name" class="input_label">Nombre completo</label>
-                    </div>
-                </div>
-
-                <div class="inputSpace">
-                    <div class="requisito">
-                        <span *ngIf="isFieldInvalid('email')">
-                            <ng-container *ngIf="signUpUserForm.get('email')?.errors?.['required']">
-                                Este campo es obligatorio
-                            </ng-container>
-                            <ng-container *ngIf="signUpUserForm.get('email')?.errors?.['email']">
-                                Debe ser un email válido
-                            </ng-container>
-                        </span>
-                    </div>
-                    <div>
-                        <input type="email" id="inputEmail1" aria-describedby="email" formControlName="email"
-                            placeholder="Ingresa tu correo"
-                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('email')}" ngNoTouched>
-                        <label for="email" class="input_label">Correo electrónico</label>
-                    </div>
-                </div>
-
-                <div class="inputSpace">
-                    <div class="requisito">
-                        <span *ngIf="isFieldInvalid('country')">
-                            <ng-container *ngIf="signUpUserForm.get('country')?.errors?.['required']">
-                                Este campo es obligatorio
-                            </ng-container>
-                            <ng-container *ngIf="signUpUserForm.get('country')?.errors?.['onlyLetters']">
-                                Solo se permiten letras
-                            </ng-container>
-                        </span>
-                    </div>
-                    <div>
-                        <input type="text" id="inputcountry" aria-describedby="country" formControlName="country"
-                            placeholder="País" [ngClass]="{'input': true,'border_danger': isFieldInvalid('country')}"
-                            ngNoTouched>
-                        <label for="country" class="input_label">País</label>
-                    </div>
-                </div>
-
-                <div class="inputSpace">
-                    <div class="requisito">
-                        <span *ngIf="isFieldInvalid('birthdate')">
-                            <ng-container *ngIf="signUpUserForm.get('birthdate')?.errors?.['required']">
-                                Este campo es obligatorio
-                            </ng-container>
-                        </span>
-                    </div>
-                    <div>
-                        <input type="date" id="inputBirthdate" aria-describedby="birthdate" formControlName="birthdate"
-                            placeholder="Fecha de nacimiento"
-                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('birthdate')}" ngNoTouched>
-                    </div>
-                </div>
-
-                <div class="colum w">
-                    <p class="text">La contraseña debe contener minimo 8 carácteres, al menos una mayúscula,
-                        minúscula, números y símbolos ($%&*)</p>
-
-                    <div class="inputSpace p">
-                        <div class="requisito">
-                            <span *ngIf="isFieldInvalid('newPassword')">
-                                <ng-container *ngIf="signUpUserForm.get('newPassword')?.errors?.['required']">
-                                    Este campo es obligatorio
-                                </ng-container>
-                                <ng-container
-                                    *ngIf="signUpUserForm.get('newPassword')?.errors?.['passw'] && signUpUserForm.get('newPassword')?.errors?.['minLength']">
-                                    La contraseña no cumple con los requisitos
-                                </ng-container>
-                            </span>
-                        </div>
-                        <div class="position">
-                            <input [type]="inputType" id="inputNewPassword" aria-describedby="newPassword"
-                                formControlName="newPassword" placeholder="Ingresa tu contraseña"
-                                [ngClass]="{'input': true, 'border-danger': isFieldInvalid('newPassword')}" ngNoTouched>
-                            <label for="newPassword" class="input_label">Ingresa tu contraseña</label>
-                            <span class="input-icon" (click)="togglePasswordVisibility()">
-                                <span *ngIf="inputType === 'password'">
-                                    <svg class="input_icon" title="Eye Icon" width="27" height="18" viewBox="0 0 27 18"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M13.5 0C7.36473 0 2.14554 3.71921 0 9C2.14554 14.2808 7.36473 18 13.5 18C19.6353 18 24.8545 14.2808 27 9C24.8545 3.71921 19.6353 0 13.5 0ZM13.5 15.002C10.125 15.002 7.36473 12.302 7.36473 9C7.36473 5.69801 10.125 2.99801 13.5 2.99801C16.875 2.99801 19.6353 5.69801 19.6353 9C19.6353 12.302 16.875 15.002 13.5 15.002ZM13.5 5.4C11.475 5.4 9.81763 7.02119 9.81763 9C9.81763 10.9788 11.475 12.6 13.5 12.6C15.525 12.6 17.1824 10.9788 17.1824 9C17.1824 7.02119 15.525 5.4 13.5 5.4Z"
-                                            fill="#666262" />
-                                    </svg>
-                                </span>
-                                <span *ngIf="inputType === 'text'">
-                                    <svg class="input_icon" width="27" height="23" viewBox="0 0 27 23" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M13.503 4.83958C16.8893 4.83958 19.6429 7.55286 19.6429 10.8951C19.6429 11.6797 19.4863 12.4224 19.2031 13.1112L22.7882 16.6451C24.6441 15.1177 26.1022 13.1471 27 10.8951C24.873 5.58229 19.6309 1.81484 13.491 1.81484C11.7737 1.81484 10.1288 2.12031 8.60433 2.65938L11.2555 5.27682C11.9545 5.0013 12.7077 4.83958 13.503 4.83958ZM1.22919 1.53932L4.03102 4.30052L4.59741 4.85755C2.55479 6.41484 0.958045 8.49922 0 10.8951C2.12096 16.2078 7.36309 19.9753 13.503 19.9753C15.4071 19.9753 17.2207 19.6099 18.8777 18.957L19.3959 19.4661L22.9931 23L24.5537 21.4607L2.78375 0L1.22919 1.53932ZM8.01384 8.22969L9.91788 10.1044C9.85762 10.356 9.82147 10.6255 9.82147 10.8891C9.82147 12.8956 11.4664 14.5187 13.503 14.5187C13.7742 14.5187 14.0453 14.4828 14.2984 14.4229L16.2024 16.2977C15.3829 16.699 14.4731 16.9385 13.503 16.9385C10.1167 16.9385 7.36309 14.2253 7.36309 10.8831C7.36309 9.93672 7.61013 9.04427 8.01384 8.22969ZM13.3042 7.28932L17.1725 11.1047L17.1966 10.913C17.1966 8.90651 15.5517 7.28333 13.5151 7.28333L13.3042 7.28932Z"
-                                            fill="#666262" />
-                                    </svg>
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="inputSpace">
-                        <div class="requisito">
-                            <span *ngIf="isFieldInvalid('passwordConfirm')">
-                                <ng-container *ngIf="signUpUserForm.get('passwordConfirm')?.errors?.['required']">
-                                    Este campo es obligatorio
-                                </ng-container>
-                                <ng-container *ngIf="signUpUserForm.get('passwordConfirm')?.errors?.['mustBeEqual']">
-                                    Las contraseñas no coinciden
-                                </ng-container>
-                            </span>
-                        </div>
-                        <div class="position">
-                            <input [type]="inputType" id="inputPasswordConfirm" aria-describedby="passwordConfirm"
-                                formControlName="passwordConfirm" placeholder="Confirma tu contraseña"
-                                [ngClass]="{'input': true, 'border-danger': isFieldInvalid('passwordConfirm')}"
-                                ngNoTouched>
-                            <label for="passwordConfirm" class="input_label">Confirma tu contraseña</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="btnPostion btnTop btnSpace">
-                    <div class="btn">
-                        <button id="btnRegistrate" class="btnPrincipal" (click)="signUp()" type="submit"
-                            [disabled]="!signUpUserForm.valid">Registrarse</button>
-                    </div>
-                </div>
-            </div>
-        </form>
+      <!-- Botón -->
+      <div class="btnPostion btnTop btnSpace">
+        <div class="btn">
+          <button id="btnRegistrate" class="btnPrincipal" type="submit" [disabled]="!signUpUserForm.valid">Registrarse</button>
+        </div>
+      </div>
     </div>
-</body>
+  </form>
+</div>
