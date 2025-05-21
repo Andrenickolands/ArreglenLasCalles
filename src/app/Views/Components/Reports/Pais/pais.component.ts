@@ -26,4 +26,8 @@ export class PaisComponent implements OnInit {
       }
     );
   }
+
+  cambiarTitulo() {
+
+  }
 }

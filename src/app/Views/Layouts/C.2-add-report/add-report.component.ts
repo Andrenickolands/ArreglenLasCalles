@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-add-report',
+  standalone: true,
   imports: [HeaderSearchComponent, RouterModule],
   templateUrl: './add-report.component.html',
   styleUrl: './add-report.component.css'

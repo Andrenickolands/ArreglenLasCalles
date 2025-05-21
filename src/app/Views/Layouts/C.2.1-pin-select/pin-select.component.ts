@@ -5,6 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pin-select',
+  standalone: true,
   imports: [FooterComponent, HeaderSesionComponent],
   templateUrl: './pin-select.component.html',
   styleUrl: './pin-select.component.css',

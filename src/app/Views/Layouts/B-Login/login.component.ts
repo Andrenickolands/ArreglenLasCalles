@@ -4,9 +4,11 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import { userLogin } from '../../../Models/Login';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
+import { AuthService } from '../../../Services/auth.service';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css' //['./login.component.css', '../../../styles.css']
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   inputType: string = 'password';
   loginForm: FormGroup;
 
-  constructor(formBuilder: FormBuilder, private router: Router) {
+  constructor(formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = formBuilder.group({
       email: ["", [Validators.required, Validators.email]],
       password: ["", [Validators.required, Validators.minLength(8), CustomValidators.passw]],
@@ -49,10 +51,17 @@ export class LoginComponent implements OnInit {
       console.log('form');
       console.log(this.loginForm);
 
-      this.router.navigateByUrl('/Home');
-      this.loginForm.reset();
-
-      // Por ejemplo, this.router.navigate(['/dashboard']);
+      this.authService.login(user).subscribe(
+        response => {
+          console.log('Login successful', response);
+          this.router.navigateByUrl('/Home');
+          this.loginForm.reset();
+        },
+        error => {
+          console.error('Login error', error);
+          // Handle login error
+        }
+      );
     } else {
       // Marcar todos los campos como tocados para mostrar errores de validación
       Object.keys(this.loginForm.controls).forEach(field => {

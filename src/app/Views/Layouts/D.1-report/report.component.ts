@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-report',
+  standalone: true,
   imports: [HeaderSesionComponent, CommonModule],
   templateUrl: './report.component.html',
   styleUrl: './report.component.css'

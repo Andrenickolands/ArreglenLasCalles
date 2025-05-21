@@ -7,6 +7,7 @@ import { CustomValidators } from '../../../../Communs/Custom-validators';
 
 @Component({
   selector: 'app-profile',
+  standalone: true,
   imports: [HeaderSesionComponent, CommonModule, ReactiveFormsModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'

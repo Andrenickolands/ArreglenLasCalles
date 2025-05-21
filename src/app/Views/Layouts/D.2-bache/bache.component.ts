@@ -7,6 +7,7 @@ import { HeaderSesionComponent } from '../../Components/Header/Header-sesion/hea
 
 @Component({
   selector: 'app-bache',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, HeaderSesionComponent],
   templateUrl: './bache.component.html',
   styleUrl: './bache.component.css'

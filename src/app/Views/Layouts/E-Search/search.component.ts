@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-search',
+  standalone: true,
   imports: [HeaderSearchComponent, RouterModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'

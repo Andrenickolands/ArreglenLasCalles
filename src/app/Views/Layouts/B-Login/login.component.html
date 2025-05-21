@@ -31,8 +31,8 @@
             <div class="inputPosition">
                 <div class="inputSpace">
                     <div class="requisito">
-                        <span *ngIf="isFieldInvalid('email')">
-                            <ng-container *ngIf="loginForm.get('email')?.errors?.['required']">
+                        <span *ngIf="isFieldInvalid('username')">
+                            <ng-container *ngIf="loginForm.get('username')?.errors?.['required']">
                                 Este campo es obligatorio
                             </ng-container>
                             <ng-container *ngIf="loginForm.get('email')?.errors?.['email']">
@@ -41,10 +41,10 @@
                         </span>
                     </div>
                     <div>
-                        <input type="email" id="inputEmail1" aria-describedby="email" formControlName="email"
-                            placeholder="Ingresa tu correo"
-                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('email')}" ngNoTouched>
-                        <label for="email" class="input_label">Ingresa tu correo</label>
+                        <input type="text" id="inputUsername" aria-describedby="username" formControlName="username"
+                            placeholder="Ingresa tu usuario"
+                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('username')}" ngNoTouched>
+                        <label for="username" class="input_label">Ingresa tu usuario</label>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                         </span>
                     </div>
                     <div class="position">
-                        <input [type]="inputType"  id="inputPassword" aria-describedby="password" formControlName="password"
+                        <input [type]="inputType" id="inputPassword" aria-describedby="password" formControlName="password"
                             placeholder="Ingresa tu contraseña"
                             [ngClass]="{'input': true, 'border-danger': isFieldInvalid('password')}" ngNoTouched>
                         <label for="password" class="input_label">Ingresa tu contraseña</label>
@@ -84,6 +84,11 @@
                         </span>
                     </div>
                 </div>
+
+                <!-- Agregar mensaje de error de autenticación -->
+                <!-- <div *ngIf="loginError" class="error-message">
+                    {{ loginError }}
+                </div> -->
             </div>
 
             <div class="btnPostion btnTop">
