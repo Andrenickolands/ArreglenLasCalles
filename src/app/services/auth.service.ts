@@ -7,12 +7,12 @@ import { AuthCredentials, AuthResponse } from '../Models/Auth';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/auth';
+  private apiUrl = 'http://localhost:8080/login';
 
   constructor(private http: HttpClient) {}
 
   login(credentials: AuthCredentials): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, credentials);
+    return this.http.post<AuthResponse>(`${this.apiUrl}`, credentials);
   }
 
   // Guardar el token en localStorage

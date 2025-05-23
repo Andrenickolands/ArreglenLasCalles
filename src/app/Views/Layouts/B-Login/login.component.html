@@ -31,8 +31,8 @@
             <div class="inputPosition">
                 <div class="inputSpace">
                     <div class="requisito">
-                        <span *ngIf="isFieldInvalid('username')">
-                            <ng-container *ngIf="loginForm.get('username')?.errors?.['required']">
+                        <span *ngIf="isFieldInvalid('email')">
+                            <ng-container *ngIf="loginForm.get('email')?.errors?.['required']">
                                 Este campo es obligatorio
                             </ng-container>
                             <ng-container *ngIf="loginForm.get('email')?.errors?.['email']">
@@ -41,10 +41,10 @@
                         </span>
                     </div>
                     <div>
-                        <input type="text" id="inputUsername" aria-describedby="username" formControlName="username"
+                        <input type="text" id="inputUsername" aria-describedby="email" formControlName="email"
                             placeholder="Ingresa tu usuario"
-                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('username')}" ngNoTouched>
-                        <label for="username" class="input_label">Ingresa tu usuario</label>
+                            [ngClass]="{'input': true,'border_danger': isFieldInvalid('email')}" ngNoTouched>
+                        <label for="email" class="input_label">Ingresa tu email</label>
                     </div>
                 </div>
 

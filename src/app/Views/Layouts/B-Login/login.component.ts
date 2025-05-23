@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import { userLogin } from '../../../Models/Login';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
-import { AuthService } from '../../../Services/auth.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -34,42 +34,41 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      // Aquí puedes agregar la lógica de inicio de sesión
-      console.log('logeado');
+  if (this.loginForm.valid) {
+    const user: userLogin = {
+      id: 0,
+      email: this.loginForm.get('email')?.value,
+      password: this.loginForm.get('password')?.value
+    };
 
-      const user: userLogin = {
-        id: 0,
-        email: this.loginForm.get('email')?.value,
-        password: this.loginForm.get('password')?.value
+    this.authService.login(user).subscribe(
+      response => {
+        console.log('Login successful', response);
+        
+        //  Guardar el token en localStorage
+        this.authService.saveToken(response.token);
+
+
+        // Navegar a Home
+        this.router.navigateByUrl('/Home');
+
+        // Limpiar el formulario
+        this.loginForm.reset();
+      },
+      error => {
+        console.error('Login error', error);
+        // Aquí podrías mostrar un mensaje al usuario
       }
-
-      console.log('Username');
-      console.log(user);
-
-      console.log('form');
-      console.log(this.loginForm);
-
-      this.authService.login(user).subscribe(
-        response => {
-          console.log('Login successful', response);
-          this.router.navigateByUrl('/Home');
-          this.loginForm.reset();
-        },
-        error => {
-          console.error('Login error', error);
-          // Handle login error
-        }
-      );
-    } else {
-      // Marcar todos los campos como tocados para mostrar errores de validación
-      Object.keys(this.loginForm.controls).forEach(field => {
-        const control = this.loginForm.get(field);
-        control?.markAsTouched();
-      });
-    }
+    );
+  } else {
+    // Marcar todos los campos como tocados para mostrar errores de validación
+    Object.keys(this.loginForm.controls).forEach(field => {
+      const control = this.loginForm.get(field);
+      control?.markAsTouched();
+    });
   }
+}
+
 
   navigateToPage() {
     this.router.navigate(['/Signup']);
