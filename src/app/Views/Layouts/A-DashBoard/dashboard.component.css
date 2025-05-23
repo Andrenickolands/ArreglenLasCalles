@@ -18,5 +18,7 @@
     filter: invert(90%) hue-rotate(180deg);
     z-index: 0;
     width: 100%;
-    height: calc(100vh -  78px); /* Ajusta según el tamaño de tu header y footer */
+    height: calc(100vh - 16px);
 }
+
+

@@ -3,11 +3,10 @@ import { FooterComponent } from "../../Components/Footer/footer.component";
 import { PaisComponent } from "../../Components/Reports/Pais/pais.component";
 import { HeaderDashboardComponent } from "../../Components/Header/Header-dashboard/header-dashboard.component";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ModalSignInComponent } from "../../Components/Modals/ModalLogin/modal-sign-in.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [FooterComponent, PaisComponent, HeaderDashboardComponent, ModalSignInComponent],
+  imports: [FooterComponent, PaisComponent, HeaderDashboardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -37,7 +37,7 @@ export const routes: Routes = [
     {path:"Add-report", component: AddReportComponent},
     {path:"Pin-select", component: PinSelectComponent},
     {path:"Create-report", component: CreateReportComponent},
-    {path: "", component: PinSelectComponent},
+    {path: "", component: HomeComponent},
     {path:"**", redirectTo:"", pathMatch:"full"},
 ];
 
@@ -47,4 +47,4 @@ export const routes: Routes = [
 //       component: SignupComponent,
 //       canActivate: [AuthGuard] 
 //     }
-// ];
+// ]; 

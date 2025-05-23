@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
   styleUrl: './modal-sign-in.component.css'
 })
 export class ModalSignInComponent {
-  mostrar: boolean = false;
-
+  @Input() mostrar: boolean = false;
+ 
   constructor(private router: Router) {
   }
 
-  open(mostrarP: boolean) {
-    this.mostrar = mostrarP;
+  open(mostrar: boolean) {
+    this.mostrar = mostrar;
   }
 
   close() {
@@ -23,5 +23,6 @@ export class ModalSignInComponent {
 
   navigateToLogin() {
     this.router.navigate(['/Login']);
+    this.close();
   }
 }
