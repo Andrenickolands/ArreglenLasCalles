@@ -57,6 +57,7 @@ export class PaisComponent implements OnInit {
   }
 
   ShowModal(){
+    this.mostrar = true;
     this.modalSignIn.open(this.mostrar);
   }
 }
