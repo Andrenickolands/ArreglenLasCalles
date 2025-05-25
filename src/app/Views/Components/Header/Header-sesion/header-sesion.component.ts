@@ -42,6 +42,6 @@ export class HeaderSesionComponent implements OnInit {
   }
 
   LogOut(){
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/Dashboard']);
   }
 }

@@ -86,6 +86,10 @@ a {
     padding-left: 0;
 }
 
+.requisitoSpace{
+    padding-right: 1rem;
+}
+
 .input.border_danger {
     color: var(--red);
     border: 2px solid var(--red);
