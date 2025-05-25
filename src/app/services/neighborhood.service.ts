@@ -15,8 +15,13 @@ export class NeighborhoodService {
     private authService: AuthService
   ) {}
 
-//   Método para obtener
+  // Método para obtener
   getNeighborhoods(): Observable<any> {
     return this.http.get(this.apiUrl);
+  }
+
+  // Método para obtener un dato por ID
+  getNeighborhoodByID(id: number | string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
   }
 }

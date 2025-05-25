@@ -13,11 +13,19 @@ import { ModalSignInComponent } from '../../Modals/ModalLogin/modal-sign-in.comp
 })
 export class CountryComponent implements OnInit {
 
+  @ViewChild(ModalSignInComponent) modalLogin!: ModalSignInComponent;
+
   datos: any[] = [];
+  selectedCountry: any = null;
 
   constructor(private countryService: CountryService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadAllCountries();
+  }
+
+  // Cargar todos los países
+  loadAllCountries(): void {
     this.countryService.getCountries().subscribe(
       (res) => {
         this.datos = res;
@@ -29,11 +37,24 @@ export class CountryComponent implements OnInit {
     );
   }
 
+  // Método para obtener un país específico por ID
+  getCountryById(countryId: number | string): void {
+    this.countryService.getCountryById(countryId).subscribe(
+      (res) => {
+        this.selectedCountry = res;
+        console.log('País obtenido por ID:', this.selectedCountry);
+      },
+      (err) => {
+        console.error('Error al obtener el país por ID:', err);
+      }
+    );
+  }
+
   Next() {
 
   }
 
-   // Método para verificar si el usuario está logueado
+  // Método para verificar si el usuario está logueado
   isAuthenticated(): boolean {
     return this.getToken() !== null;
   }
@@ -47,7 +68,7 @@ export class CountryComponent implements OnInit {
     if (this.isAuthenticated()) {
       this.router.navigate(['/add-report']);
     } else {
-      
+      this.modalLogin.open();
     }
   }
 }

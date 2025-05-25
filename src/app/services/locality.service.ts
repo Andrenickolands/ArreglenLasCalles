@@ -19,4 +19,9 @@ export class LocalityService {
   getLocalities(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+
+  // Método para obtener un dato por ID
+  getLocalityByID(id: number | string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
 }

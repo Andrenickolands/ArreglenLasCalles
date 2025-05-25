@@ -19,4 +19,11 @@ export class CityService {
   getCities(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+
+  // Método para obtener un dato por ID
+  getCityByID(id: number | string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
+
 }

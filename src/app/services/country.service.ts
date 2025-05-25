@@ -20,6 +20,11 @@ export class CountryService {
     return this.http.get(this.apiUrl);
   }
 
+  // Método para obtener un dato por ID
+  getCountryById(id: number | string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
   // // Método para obtener con autorización
   // getCountries(): Observable<any> {
   //   const token = this.authService.getToken();
@@ -28,5 +33,15 @@ export class CountryService {
   //   });
 
   //   return this.http.get(this.apiUrl, { headers });
+  // }
+
+  // Método alternativo con autorización si lo necesitas
+  // getCountryByIdWithAuth(id: number | string): Observable<any> {
+  //   const token = this.authService.getToken();
+  //   const headers = new HttpHeaders({
+  //     Authorization: `Bearer ${token}`
+  //   });
+    
+  //   return this.http.get(`${this.apiUrl}/${id}`, { headers });
   // }
 }
