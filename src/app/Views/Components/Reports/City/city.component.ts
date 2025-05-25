@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalSignInComponent } from '../../Modals/ModalLogin/modal-sign-in.component';
 import { CommonModule } from '@angular/common';
 import { Router } from 'express';
 import { CityService } from '../../../../services/city.service';
+import { ModalSignInComponent } from '../../Modals/ModalLogin/modal-sign-in.component';
 
 @Component({
   selector: 'app-city',
