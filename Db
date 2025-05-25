@@ -104,7 +104,7 @@ CREATE TABLE Image (
 
 -----------------------------------
 -- Estados del reporte
-INSERT INTO ReportStatus (Status) VALUES ('Pendiente'), ('En proceso'), ('Resuelto');
+INSERT INTO ReportStatus (Status) VALUES ('Pendiente'), ('Arreglado');
 
 -- Importancia del reporte
 INSERT INTO ReportImportance (Level) VALUES ('Baja'), ('Media'), ('Alta'), ('Crítica');
