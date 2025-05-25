@@ -1,32 +1,24 @@
-CREATE DATABASE ArreglenLasCallesDB;
+CREATE DATABASE IF NOT EXISTS ArreglenLasCallesDB;
 USE ArreglenLasCallesDB;
-
----
-## Core User
----
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(80) NOT NULL,
     Email VARCHAR(100) UNIQUE NOT NULL,
-    Country VARCHAR(50) NOT NULL, 
+    Country VARCHAR(50) NOT NULL,
     Password VARCHAR(225),
     AcceptsTerms BOOLEAN NOT NULL,
     RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
----
-## Geographical Hierarchy Tables
----
-
 CREATE TABLE Country (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) UNIQUE NOT NULL COLLATE utf8mb4_general_ci NOT NULL,
+    Name VARCHAR(50) UNIQUE NOT NULL COLLATE utf8mb4_general_ci
 );
 
 CREATE TABLE City (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci NOT NULL,,
+    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     CountryId INT NOT NULL,
     FOREIGN KEY (CountryId) REFERENCES Country(id),
     UNIQUE(Name, CountryId)
@@ -34,7 +26,7 @@ CREATE TABLE City (
 
 CREATE TABLE Locality (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci NOT NULL,,
+    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     CityId INT NOT NULL,
     FOREIGN KEY (CityId) REFERENCES City(id),
     UNIQUE(Name, CityId)
@@ -42,15 +34,11 @@ CREATE TABLE Locality (
 
 CREATE TABLE Neighborhood (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci NOT NULL,,
+    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     LocalityId INT NOT NULL,
     FOREIGN KEY (LocalityId) REFERENCES Locality(id),
-    UNIQUE(Name, LocalityId) 
+    UNIQUE(Name, LocalityId)
 );
-
----
-## Image and Report Tables
----
 
 CREATE TABLE ReportStatus (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -102,6 +90,7 @@ CREATE TABLE Image (
     UploadDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ReportId) REFERENCES Report(id)
 );
+
 
 
 
