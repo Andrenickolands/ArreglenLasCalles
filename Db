@@ -17,22 +17,26 @@ CREATE TABLE EstadoDeHueco (
     ReporteId INT NOT NULL,
     UsuarioId VARCHAR(80) NOT NULL
 );
-CREATE TABLE Reporte (
+CREATE TABLE Report (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fechaCreacion VARCHAR(100) NOT NULL,
     Ubicacion BOOLEAN,
-    Direccion INT NOT NULL
+    Direccion INT NOT NULL,
     Barrio VARCHAR(50) NOT NULL,
     localidad VARCHAR(50) NOT NULL,
     Ciudad VARCHAR(50) NOT NULL,
     Pais VARCHAR(50) NOT NULL,
-    ImagenId INT NOT NULL,
+    -- REMOVER ImageId si un reporte puede tener múltiples imágenes
+    -- ImageId INT NOT NULL,
     EstadoId INT NOT NULL,
     UsuarioId INT NOT NULL,
     ImportanciaId INT NOT NULL,
-    Categoria INT NOT NULL
-
+    Categoria INT NOT NULL,
+    FOREIGN KEY (EstadoId) REFERENCES EstadoDeHueco(id), -- Añadir las claves foráneas explícitas
+    FOREIGN KEY (UsuarioId) REFERENCES user(Id),
+    FOREIGN KEY (ImportanciaId) REFERENCES Importancia(id)
 );
+
 CREATE TABLE Imagen (
     id INT AUTO_INCREMENT PRIMARY KEY,
     url VARCHAR(100) NOT NULL,
