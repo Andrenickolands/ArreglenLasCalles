@@ -28,21 +28,24 @@ CREATE TABLE City (
     id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(50) NOT NULL,
     CountryId INT NOT NULL,
-    FOREIGN KEY (CountryId) REFERENCES Country(id)
+    FOREIGN KEY (CountryId) REFERENCES Country(id),
+    UNIQUE(Name, CountryId)
 );
 
 CREATE TABLE Locality (
     id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(50) NOT NULL,
     CityId INT NOT NULL,
-    FOREIGN KEY (CityId) REFERENCES City(id)
+    FOREIGN KEY (CityId) REFERENCES City(id),
+    UNIQUE(Name, CityId)
 );
 
 CREATE TABLE Neighborhood (
     id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(50) NOT NULL,
     LocalityId INT NOT NULL,
-    FOREIGN KEY (LocalityId) REFERENCES Locality(id)
+    FOREIGN KEY (LocalityId) REFERENCES Locality(id),
+    UNIQUE(Name, LocalityId) 
 );
 
 ---
