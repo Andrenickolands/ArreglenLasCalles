@@ -1,76 +1,149 @@
-CREATE DATABASE ArreglarLasCalles;
-USE ArreglarLasCalles;
-CREATE TABLE usuario (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Nombre VARCHAR(80) NOT NULL,
-    Correo VARCHAR(100) UNIQUE NOT NULL,
-    Pais VARCHAR(50) NOT NULL,
-    Contraseña VARCHAR(20),
-    Acepta BOOLEAN NOT NULL,
-    FechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE DATABASE ArreglenLasCallesDB;
+USE ArreglenLasCallesDB;
+
+---
+## Core User
+---
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(80) NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    Country VARCHAR(50) NOT NULL, 
+    Password VARCHAR(225),
+    AcceptsTerms BOOLEAN NOT NULL,
+    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE EstadoDeHueco (
+---
+## Geographical Hierarchy Tables
+---
+
+CREATE TABLE Country (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    descripcion VARCHAR(100) NOT NULL,
-    Estado BOOLEAN,
-    ReporteId INT NOT NULL,
-    UsuarioId VARCHAR(80) NOT NULL
+    Name VARCHAR(50) UNIQUE NOT NULL
 );
+
+CREATE TABLE City (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    CountryId INT NOT NULL,
+    FOREIGN KEY (CountryId) REFERENCES Country(id)
+);
+
+CREATE TABLE Locality (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    CityId INT NOT NULL,
+    FOREIGN KEY (CityId) REFERENCES City(id)
+);
+
+CREATE TABLE Neighborhood (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    LocalityId INT NOT NULL,
+    FOREIGN KEY (LocalityId) REFERENCES Locality(id)
+);
+
+---
+## Image and Report Tables
+---
+
+CREATE TABLE ReportStatus (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Status VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE ReportImportance (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Level VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE ReportCategory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL UNIQUE
+);
+
 CREATE TABLE Report (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    fechaCreacion VARCHAR(100) NOT NULL,
-    Ubicacion BOOLEAN,
-    Direccion INT NOT NULL,
-    Barrio VARCHAR(50) NOT NULL,
-    localidad VARCHAR(50) NOT NULL,
-    Ciudad VARCHAR(50) NOT NULL,
-    Pais VARCHAR(50) NOT NULL,
-    -- REMOVER ImageId si un reporte puede tener múltiples imágenes
-    -- ImageId INT NOT NULL,
-    EstadoId INT NOT NULL,
-    UsuarioId INT NOT NULL,
-    ImportanciaId INT NOT NULL,
-    Categoria INT NOT NULL,
-    FOREIGN KEY (EstadoId) REFERENCES EstadoDeHueco(id), -- Añadir las claves foráneas explícitas
-    FOREIGN KEY (UsuarioId) REFERENCES user(Id),
-    FOREIGN KEY (ImportanciaId) REFERENCES Importancia(id)
+    CreationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    LastUpdatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    HasLocation BOOLEAN DEFAULT FALSE,
+    Latitude DECIMAL(9,6), 
+    Longitude DECIMAL(9,6), 
+    Address VARCHAR(255) NOT NULL,
+    Description TEXT, 
+    CountryId INT NOT NULL,
+    CityId INT NOT NULL,
+    LocalityId INT NOT NULL,
+    NeighborhoodId INT NOT NULL,
+    UserId INT NOT NULL,
+    ReportStatusId INT NOT NULL,
+    ReportImportanceId INT NOT NULL,
+    ReportCategoryId INT NOT NULL,
+
+    FOREIGN KEY (CountryId) REFERENCES Country(id),
+    FOREIGN KEY (CityId) REFERENCES City(id),
+    FOREIGN KEY (LocalityId) REFERENCES Locality(id),
+    FOREIGN KEY (NeighborhoodId) REFERENCES Neighborhood(id),
+    FOREIGN KEY (UserId) REFERENCES users(id),
+    FOREIGN KEY (ReportStatusId) REFERENCES ReportStatus(id),
+    FOREIGN KEY (ReportImportanceId) REFERENCES ReportImportance(id),
+    FOREIGN KEY (ReportCategoryId) REFERENCES ReportCategory(id)
 );
 
-CREATE TABLE Imagen (
+CREATE TABLE Image (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    url VARCHAR(100) NOT NULL,
-    ReporteId INT NOT NULL
-
-);
-CREATE TABLE Importancia (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nivel VARCHAR(100) NOT NULL
-
+    Url VARCHAR(255) NOT NULL,
+    ReportId INT NOT NULL, 
+    UploadDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (ReportId) REFERENCES Report(id)
 );
 
-Comando llaves foraneas:
 
-SELECT usuario.Id, Reporte.UsuarioId
-FROM usuario
-INNER JOIN Reporte ON usuario.Id = Reporte.UsuarioId;
 
-SELECT Reporte.ImportanciaId, EstadoDeHueco.id
-FROM Reporte
-INNER JOIN EstadoDeHueco ON Reporte.ImportanciaId = EstadoDeHueco.id;
+-----------------------------------
+-- Estados del reporte
+INSERT INTO ReportStatus (Status) VALUES ('Pendiente'), ('En proceso'), ('Resuelto');
 
-SELECT Reporte.ImagenId, Imagen.id
-FROM Reporte
-INNER JOIN Imagen ON Reporte.ImagenId = Imagen.id;
+-- Importancia del reporte
+INSERT INTO ReportImportance (Level) VALUES ('Baja'), ('Media'), ('Alta'), ('Crítica');
 
-SELECT Reporte.EstadoId, EstadoDeHueco.id
-FROM Reporte
-INNER JOIN EstadoDeHueco ON Reporte.EstadoId = EstadoDeHueco.id;
+-- Categorías del reporte
+INSERT INTO ReportCategory (Name) VALUES ('Calle'), ('Anden');
 
-SELECT Reporte.id, EstadoDeHueco.ReporteId
-FROM Reporte
-INNER JOIN EstadoDeHueco ON Reporte.id = EstadoDeHueco.ReporteId;
+----------------------------------
+-- Bloque 1
+INSERT INTO Country (Name) VALUES
+('Colombia'), ('México'), ('Perú'), ('Afganistán'), ('Albania'), ('Alemania'), ('Andorra'), ('Angola'), ('Antigua y Barbuda'), ('Arabia Saudita'),
+('Argelia'), ('Argentina'), ('Armenia'), ('Australia'), ('Austria'), ('Azerbaiyán'), ('Bahamas'), ('Bangladés'),
+('Barbados'), ('Baréin'), ('Bélgica'), ('Belice'), ('Benín'), ('Bielorrusia'), ('Birmania'), ('Bolivia'),
+('Bosnia y Herzegovina'), ('Botsuana'), ('Brasil'), ('Brunéi'), ('Bulgaria'), ('Burkina Faso'), ('Burundi'),
+('Bután'), ('Cabo Verde'), ('Camboya'), ('Camerún'), ('Canadá'), ('Catar'), ('Chad'), ('Chile'), ('China'),
+('Chipre'), ('Ciudad del Vaticano'), ('Comoras'), ('Corea del Norte'), ('Corea del Sur'),
+('Costa de Marfil'), ('Costa Rica'), ('Croacia'), ('Cuba'), ('Dinamarca'), ('Dominica'), ('Ecuador'), ('Egipto'),
+('El Salvador'), ('Emiratos Árabes Unidos'), ('Eritrea'), ('Eslovaquia'), ('Eslovenia'), ('España'),
+('Estados Unidos'), ('Estonia'), ('Esuatini'), ('Etiopía'), ('Filipinas'), ('Finlandia'), ('Fiyi'), ('Francia'),
+('Gabón'), ('Gambia'), ('Georgia'), ('Ghana'), ('Granada'), ('Grecia'), ('Guatemala'), ('Guinea'),
+('Guinea ecuatorial'), ('Guinea-Bisáu'), ('Guyana'), ('Haití'), ('Honduras'), ('Hungría'), ('India'),
+('Indonesia'), ('Irak'), ('Irán'), ('Irlanda'), ('Islandia'), ('Islas Marshall'), ('Islas Salomón'),
+('Israel'), ('Italia'), ('Jamaica'), ('Japón'), ('Jordania'), ('Kazajistán'), ('Kenia'), ('Kirguistán'),
+('Kiribati');
 
-SELECT EstadoDeHueco.id, Importancia.id
-FROM EstadoDeHueco
-INNER JOIN Importancia ON EstadoDeHueco.id = Importancia.id;
+-- Bloque 2
+INSERT INTO Country (Name) VALUES
+('Kuwait')('Laos'),('Lesoto'), ('Letonia'), ('Líbano'), ('Liberia'), ('Libia'), ('Liechtenstein'), ('Lituania'), ('Luxemburgo'),
+('Macedonia del Norte'), ('Madagascar'), ('Malasia'), ('Malaui'), ('Maldivas'), ('Malí'), ('Malta'),
+('Marruecos'), ('Mauricio'), ('Mauritania'), ('Micronesia'), ('Moldavia'), ('Mónaco'), ('Mongolia'),
+('Montenegro'), ('Mozambique'), ('Namibia'), ('Nauru'), ('Nepal'), ('Nicaragua'), ('Níger'), ('Nigeria'),
+('Noruega'), ('Nueva Zelanda'), ('Omán'), ('Países Bajos'), ('Pakistán'), ('Palaos'), ('Palestina'), ('Panamá'),
+('Papúa Nueva Guinea'), ('Paraguay'), ('Polonia'), ('Portugal'), ('Reino Unido'),
+('República Centroafricana'), ('República Checa'), ('República del Congo'), ('República Democrática del Congo'),
+('República Dominicana'), ('Ruanda'), ('Rumanía'), ('Rusia'), ('Samoa'), ('San Cristóbal y Nieves'),
+('San Marino'), ('San Vicente y las Granadinas'), ('Santa Lucía'), ('Santo Tomé y Príncipe'), ('Senegal'),
+('Serbia'), ('Seychelles'), ('Sierra Leona'), ('Singapur'), ('Siria'), ('Somalia'), ('Sri Lanka'), ('Sudáfrica'),
+('Sudán'), ('Sudán del Sur'), ('Suecia'), ('Suiza'), ('Surinam'), ('Tailandia'), ('Tanzania'), ('Tayikistán'),
+('Timor Oriental'), ('Togo'), ('Tonga'), ('Trinidad y Tobago'), ('Túnez'), ('Turkmenistán'), ('Turquía'),
+('Tuvalu'), ('Ucrania'), ('Uganda'), ('Uruguay'), ('Uzbekistán'), ('Vanuatu'), ('Venezuela'), ('Vietnam'),
+('Yemen'), ('Yibuti'), ('Zambia'), ('Zimbabue');
+
