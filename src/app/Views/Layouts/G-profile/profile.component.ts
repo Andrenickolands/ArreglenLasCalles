@@ -39,7 +39,6 @@ export class ProfileComponent implements OnInit {
   }
 
   putUser() {
-
     if (this.ProfileForm.valid) {
 
       this.showErrors = false;

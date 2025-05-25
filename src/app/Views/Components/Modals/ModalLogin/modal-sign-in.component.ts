@@ -1,23 +1,29 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-sign-in',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './modal-sign-in.component.html',
   styleUrl: './modal-sign-in.component.css'
 })
 export class ModalSignInComponent {
-  @Input() mostrar: boolean = false;
- 
+
+  mostrar: boolean = false;
+
   constructor(private router: Router) {
   }
 
-  open(mostrar: boolean) {
-    this.mostrar = mostrar;
+  open(): void {
+    console.log('Modal open() called');
+    console.log('Variable' + ' ' + this.mostrar);
+    this.mostrar = true;
   }
 
-  close() {
+  close(): void {
+    console.log('Modal close() called');
+    console.log('Variable' + ' ' + this.mostrar)
     this.mostrar = false;
   }
 

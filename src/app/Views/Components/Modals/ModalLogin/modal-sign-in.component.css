@@ -9,7 +9,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 40%;
     position: absolute;
     padding: 1rem 0.5rem 2.5rem 0.5rem;
     background-color: var(--black);
@@ -66,7 +65,7 @@
 
 .btnSecundary:hover,
 .btnSecundary:active {
-    width: 156px;
+    width: 158px;
     height: 42px;
     background-color: transparent;
     border: 3px solid var(--color);
@@ -98,7 +97,7 @@
 
 .btnPrincipal:hover,
 .btnPrincipal:active {
-    width: 156px;
+    width: 158px;
     height: 42px;
     background-color: var(--color);
     border-radius: 12px;

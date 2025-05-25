@@ -6,9 +6,9 @@ import { AuthService } from './auth.service'; // Asegúrate de que la ruta sea c
 @Injectable({
   providedIn: 'root',
 })
-export class CountryService {
+export class CityService {
 
-  private apiUrl = 'http://localhost:8080/countries';
+  private apiUrl = 'http://localhost:8080/cities';
 
   constructor(
     private http: HttpClient,
@@ -16,17 +16,7 @@ export class CountryService {
   ) {}
 
   // Método para obtener
-  getCountries(): Observable<any> {
+  getCities(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
-
-  // // Método para obtener con autorización
-  // getCountries(): Observable<any> {
-  //   const token = this.authService.getToken();
-  //   const headers = new HttpHeaders({
-  //     Authorization: `Bearer ${token}`
-  //   });
-
-  //   return this.http.get(this.apiUrl, { headers });
-  // }
 }
