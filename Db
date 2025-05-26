@@ -124,7 +124,7 @@ INSERT INTO Country (Name) VALUES
 
 -- Bloque 2
 INSERT INTO Country (Name) VALUES
-('Kuwait')('Laos'),('Lesoto'), ('Letonia'), ('Líbano'), ('Liberia'), ('Libia'), ('Liechtenstein'), ('Lituania'), ('Luxemburgo'),
+('Kuwait'),('Laos'),('Lesoto'), ('Letonia'), ('Líbano'), ('Liberia'), ('Libia'), ('Liechtenstein'), ('Lituania'), ('Luxemburgo'),
 ('Macedonia del Norte'), ('Madagascar'), ('Malasia'), ('Malaui'), ('Maldivas'), ('Malí'), ('Malta'),
 ('Marruecos'), ('Mauricio'), ('Mauritania'), ('Micronesia'), ('Moldavia'), ('Mónaco'), ('Mongolia'),
 ('Montenegro'), ('Mozambique'), ('Namibia'), ('Nauru'), ('Nepal'), ('Nicaragua'), ('Níger'), ('Nigeria'),
