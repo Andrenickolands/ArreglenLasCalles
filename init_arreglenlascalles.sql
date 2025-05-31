@@ -15,7 +15,7 @@ CREATE TABLE users (
 
 CREATE TABLE Country (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) UNIQUE NOT NULL COLLATE utf8mb4_general_ci,
+    NameCountry VARCHAR(50) UNIQUE NOT NULL COLLATE utf8mb4_general_ci,
     CodeAlf3 VARCHAR(3) UNIQUE,
     CodeAlf2 VARCHAR(2) UNIQUE,
     CodeNum INT(3) UNIQUE
@@ -23,7 +23,7 @@ CREATE TABLE Country (
 
 CREATE TABLE City (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
+    NameCity VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     CountryId INT NOT NULL,
     FOREIGN KEY (CountryId) REFERENCES Country(id),
     UNIQUE(Name, CountryId)
@@ -31,7 +31,7 @@ CREATE TABLE City (
 
 CREATE TABLE Locality (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
+    NameLocality VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     CityId INT NOT NULL,
     FOREIGN KEY (CityId) REFERENCES City(id),
     UNIQUE(Name, CityId)
@@ -39,7 +39,7 @@ CREATE TABLE Locality (
 
 CREATE TABLE Neighborhood (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
+    NameNeighborhood VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     LocalityId INT NOT NULL,
     FOREIGN KEY (LocalityId) REFERENCES Locality(id),
     UNIQUE(Name, LocalityId)
