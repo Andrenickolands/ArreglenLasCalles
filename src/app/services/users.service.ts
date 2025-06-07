@@ -16,8 +16,8 @@ export class UsersService {
     return this.http.post(this.apiUrl, user);
   }
 
-
-  getUsers(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  // Método para obtener un dato por ID
+  getUsersByID(id: number | string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
   }
 }

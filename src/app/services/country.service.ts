@@ -35,7 +35,7 @@ export class CountryService {
   //   return this.http.get(this.apiUrl, { headers });
   // }
 
-  // Método alternativo con autorización si lo necesitas
+  // Método alternativo con autorización 
   // getCountryByIdWithAuth(id: number | string): Observable<any> {
   //   const token = this.authService.getToken();
   //   const headers = new HttpHeaders({

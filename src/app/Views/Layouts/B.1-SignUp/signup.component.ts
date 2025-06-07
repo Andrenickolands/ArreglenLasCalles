@@ -28,9 +28,7 @@ export class SignupComponent implements OnInit {
       country: ['', [Validators.required, CustomValidators.onlyLetters]],
       birthdate: ['', Validators.required],
       newPassword: ['', [Validators.required, Validators.minLength(8), CustomValidators.passw]],
-      passwordConfirm: ['', [Validators.required]]
-    }, {
-      validators: CustomValidators.mustBeEqual('newPassword', 'passwordConfirm')
+      passwordConfirm: ['', [Validators.required, CustomValidators.mustBeEqual('newPassword', 'passwordConfirm')]]
     });
   }
 
