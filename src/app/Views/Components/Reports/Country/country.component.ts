@@ -30,10 +30,32 @@ export class CountryComponent implements OnInit {
   constructor(private countryService: CountryService, private cityService: CityService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadAllCountries();
+    this.loadAllCities();
+    this.loadReportCountsForCountry();
+    
     setInterval(() => {
       this.loadAllCountries();
       this.loadAllCities();
+      this.loadReportCountsForCountry();
     }, 30000);
+  }
+
+  //Numero de reporte por pais
+  loadReportCountsForCountry(): void {
+    this.countryService.getNumOfReportsByCountry().subscribe(
+      (res) => {
+        this.NumReportsCountry = res.count;
+      },
+      (err) => {
+        console.error('Error al cargar el conteo de reportes del país:', err);
+      }
+    );
+  }
+
+  //Numero de reportes por cada ciudad en la lista 
+  loadReportCountsToCities(): void {
+
   }
 
   // Cargar todos los países
@@ -46,9 +68,6 @@ export class CountryComponent implements OnInit {
         this.datos = res;
         this.filtered = [...this.datos];
         this.loading = false;
-        this.NumReportsCountry = res.length; // Agregar esta línea
-        console.log('Datos cargados:', this.datos);
-        console.log('Total de localidades:', this.NumReportsCountry);
       },
       (err) => {
         console.error('Error al cargar los datos:', err);
@@ -87,9 +106,7 @@ export class CountryComponent implements OnInit {
         this.datos = res;
         this.filtered = [...this.datos];
         this.loading = false;
-        this.NumReportsCity = res.length; // Agregar esta línea
         console.log('Datos cargados:', this.datos);
-        console.log('Total de localidades:', this.NumReportsCity);
       },
       (err) => {
         console.error('Error al cargar los datos:', err);

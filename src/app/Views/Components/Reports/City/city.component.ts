@@ -31,10 +31,32 @@ export class CityComponent implements OnInit {
   constructor(private cityService: CityService, private localityService: LocalityService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadAllCities();
+    this.loadAllLocalities();
+    this.loadReportCountsForCity();
+
     setInterval(() => {
       this.loadAllCities();
       this.loadAllLocalities();
+      this.loadReportCountsForCity();
     }, 30000);
+  }
+
+   //Numero de reporte por ciudad
+  loadReportCountsForCity(): void {
+    this.cityService.getNumOfReportsByCity().subscribe(
+      (res) => {
+        this.NumReportsCity = res.count;
+      },
+      (err) => {
+        console.error('Error al cargar el conteo de reportes de la ciudad:', err);
+      }
+    );
+  }
+
+  //Numero de reportes por cada localidad en la lista
+  loadReportCountsToLocalities(): void {
+
   }
 
   // Cargar todos los datos

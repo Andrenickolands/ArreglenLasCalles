@@ -24,4 +24,8 @@ export class NeighborhoodService {
   getNeighborhoodByID(id: number | string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
+
+  getNumOfReportsByNeighborhood(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/reports/count`);
+  }
 }

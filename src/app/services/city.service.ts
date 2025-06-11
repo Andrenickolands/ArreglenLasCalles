@@ -25,5 +25,9 @@ export class CityService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
+  getNumOfReportsByCity(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/reports/count`);
+  }
+
 
 }

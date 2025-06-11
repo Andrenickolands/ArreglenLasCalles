@@ -28,9 +28,25 @@ export class NeighborhoodComponent implements OnInit {
   constructor(private neighborhoodService: NeighborhoodService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadAllNeighborhoods();
+    this.loadReportCountsToNeighborhoods();
+
     setInterval(() => {
       this.loadAllNeighborhoods();
+      this.loadReportCountsToNeighborhoods();
     }, 30000);
+  }
+
+   //Numero de reporte por barrio
+  loadReportCountsToNeighborhoods(): void {
+    this.neighborhoodService.getNumOfReportsByNeighborhood().subscribe(
+      (res) => {
+        this.NumReportsNeighborhood = res.count;
+      },
+      (err) => {
+        console.error('Error al cargar el conteo de reportes del barrio:', err);
+      }
+    );
   }
 
   // Cargar todos los datos
@@ -43,9 +59,6 @@ export class NeighborhoodComponent implements OnInit {
         this.datos = res;
         this.filtered = [...this.datos];
         this.loading = false;
-        this.NumReportsNeighborhood = res.length; // Agregar esta línea
-        console.log('Datos cargados:', this.datos);
-        console.log('Total de localidades:', this.NumReportsNeighborhood);
       },
       (err) => {
         console.error('Error al cargar los datos:', err);

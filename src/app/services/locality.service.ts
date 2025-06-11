@@ -24,4 +24,8 @@ export class LocalityService {
   getLocalityByID(id: number | string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
+
+  getNumOfReportsByLocality(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/reports/count`);
+  }
 }

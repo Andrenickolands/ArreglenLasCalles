@@ -30,10 +30,32 @@ export class LocalityComponent implements OnInit {
   constructor(private localityService: LocalityService, private neighborhoodService: NeighborhoodService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loadAllLocalities();
+    this.loadAllNeighborhoods();
+    this.loadReportCountsForLocality();
+
     setInterval(() => {
       this.loadAllLocalities();
       this.loadAllNeighborhoods();
+      this.loadReportCountsForLocality();
     }, 30000);
+  }
+
+   //Numero de reporte por localidad
+  loadReportCountsForLocality(): void {
+    this.localityService.getNumOfReportsByLocality().subscribe(
+      (res) => {
+        this.NumReportsLocality = res.count;
+      },
+      (err) => {
+        console.error('Error al cargar el conteo de reportes de la localidad:', err);
+      }
+    );
+  }
+
+  //Numero de reportes por cada barrio en la lista
+  loadReportCountsToNeighborhoods(): void {
+
   }
 
   // Cargar todos los datos
@@ -46,9 +68,6 @@ export class LocalityComponent implements OnInit {
         this.datos = res;
         this.filtered = [...this.datos];
         this.loading = false;
-        this.NumReportsLocality = res.length; // Agregar esta línea
-        console.log('Datos cargados:', this.datos);
-        console.log('Total de localidades:', this.NumReportsLocality);
       },
       (err) => {
         console.error('Error al cargar los datos:', err);
@@ -87,9 +106,6 @@ export class LocalityComponent implements OnInit {
         this.datos = res;
         this.filtered = [...this.datos];
         this.loading = false;
-        this.NumReportsNeighborhood = res.length; // Agregar esta línea
-        console.log('Datos cargados:', this.datos);
-        console.log('Total de localidades:', this.NumReportsNeighborhood);
       },
       (err) => {
         console.error('Error al cargar los datos:', err);

@@ -25,6 +25,10 @@ export class CountryService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
+  getNumOfReportsByCountry(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/reports/count`);
+  }
+
   // // Método para obtener con autorización
   // getCountries(): Observable<any> {
   //   const token = this.authService.getToken();
