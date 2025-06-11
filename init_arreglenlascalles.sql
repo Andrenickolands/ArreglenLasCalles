@@ -2,17 +2,6 @@
 CREATE DATABASE IF NOT EXISTS ArreglenLasCallesDB;
 USE ArreglenLasCallesDB;
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(80) NOT NULL,
-    Email VARCHAR(100) UNIQUE NOT NULL,
-    CountryId INT NOT NULL,
-    Password VARCHAR(225),
-    AcceptsTerms BOOLEAN NOT NULL,
-    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (CountryId) REFERENCES Country(id)
-);
-
 CREATE TABLE Country (
     id INT AUTO_INCREMENT PRIMARY KEY,
     NameCountry VARCHAR(50) UNIQUE NOT NULL COLLATE utf8mb4_general_ci,
@@ -58,6 +47,17 @@ CREATE TABLE ReportImportance (
 CREATE TABLE ReportCategory (
     id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(80) NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    CountryId INT NOT NULL,
+    Password VARCHAR(225),
+    AcceptsTerms BOOLEAN NOT NULL,
+    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (CountryId) REFERENCES Country(id)
 );
 
 CREATE TABLE Report (
