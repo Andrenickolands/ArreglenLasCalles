@@ -20,7 +20,7 @@ INSERT INTO Country (NameCountry, CodeAlf3, CodeAlf2, CodeNum) VALUES
 ('Andorra', 'AND', 'AD', 20),
 ('Angola', 'AGO', 'AO', 24),
 ('Antigua y Barbuda', 'ATG', 'AG', 28),
-('Arabia Saudita', 'SAU', 'SA', 682);
+('Arabia Saudita', 'SAU', 'SA', 682),
 ('Argelia', 'DZA', 'DZ', 12),
 ('Argentina', 'ARG', 'AR', 32),
 ('Armenia', 'ARM', 'AM', 51),
@@ -30,7 +30,7 @@ INSERT INTO Country (NameCountry, CodeAlf3, CodeAlf2, CodeNum) VALUES
 ('Bahamas', 'BHS', 'BS', 44),
 ('Bangladés', 'BGD', 'BD', 50),
 ('Barbados', 'BRB', 'BB', 52),
-('Baréin', 'BHR', 'BH', 48);
+('Baréin', 'BHR', 'BH', 48),
 ('Bélgica', 'BEL', 'BE', 56),
 ('Belice', 'BLZ', 'BZ', 84),
 ('Benín', 'BEN', 'BJ', 204),
@@ -40,7 +40,7 @@ INSERT INTO Country (NameCountry, CodeAlf3, CodeAlf2, CodeNum) VALUES
 ('Bosnia y Herzegovina', 'BIH', 'BA', 70),
 ('Botsuana', 'BWA', 'BW', 72),
 ('Brasil', 'BRA', 'BR', 76),
-('Brunéi', 'BRN', 'BN', 96);
+('Brunéi', 'BRN', 'BN', 96),
 ('Bulgaria', 'BGR', 'BG', 100),
 ('Burkina Faso', 'BFA', 'BF', 854),
 ('Burundi', 'BDI', 'BI', 108),
@@ -50,7 +50,7 @@ INSERT INTO Country (NameCountry, CodeAlf3, CodeAlf2, CodeNum) VALUES
 ('Camerún', 'CMR', 'CM', 120),
 ('Canadá', 'CAN', 'CA', 124),
 ('Catar', 'QAT', 'QA', 634),
-('Chad', 'TCD', 'TD', 148);
+('Chad', 'TCD', 'TD', 148),
 ('Chile', 'CHL', 'CL', 152),
 ('China', 'CHN', 'CN', 156),
 ('Chipre', 'CYP', 'CY', 196),
