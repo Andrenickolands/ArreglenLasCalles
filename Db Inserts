@@ -10,7 +10,7 @@ INSERT INTO ReportCategory (Name) VALUES ('Calle'), ('Anden');
 
 ----------------------------------
 
-INSERT INTO Country (Name, CodeAlf3, CodeAlf2, CodeNum) VALUES
+INSERT INTO Country (NameCountry, CodeAlf3, CodeAlf2, CodeNum) VALUES
 ('Colombia', 'COL', 'CO', 170),
 ('México', 'MEX', 'MX', 484),
 ('Perú', 'PER', 'PE', 604),
