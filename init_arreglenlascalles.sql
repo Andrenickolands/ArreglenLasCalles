@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS ArreglenLasCallesDB;
 USE ArreglenLasCallesDB;
 
@@ -15,7 +14,7 @@ CREATE TABLE City (
     NameCity VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     CountryId INT NOT NULL,
     FOREIGN KEY (CountryId) REFERENCES Country(id),
-    UNIQUE(Name, CountryId)
+    UNIQUE(NameCity, CountryId)
 );
 
 CREATE TABLE Locality (
@@ -23,7 +22,7 @@ CREATE TABLE Locality (
     NameLocality VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     CityId INT NOT NULL,
     FOREIGN KEY (CityId) REFERENCES City(id),
-    UNIQUE(Name, CityId)
+    UNIQUE(NameLocality, CityId)
 );
 
 CREATE TABLE Neighborhood (
@@ -31,7 +30,7 @@ CREATE TABLE Neighborhood (
     NameNeighborhood VARCHAR(50) NOT NULL COLLATE utf8mb4_general_ci,
     LocalityId INT NOT NULL,
     FOREIGN KEY (LocalityId) REFERENCES Locality(id),
-    UNIQUE(Name, LocalityId)
+    UNIQUE(NameNeighborhood, LocalityId)
 );
 
 CREATE TABLE ReportStatus (
@@ -77,7 +76,6 @@ CREATE TABLE Report (
     ReportStatusId INT NOT NULL,
     ReportImportanceId INT NOT NULL,
     ReportCategoryId INT NOT NULL,
-
     FOREIGN KEY (CountryId) REFERENCES Country(id),
     FOREIGN KEY (CityId) REFERENCES City(id),
     FOREIGN KEY (LocalityId) REFERENCES Locality(id),
