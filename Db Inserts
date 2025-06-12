@@ -1082,9 +1082,12 @@ INSERT INTO City (NameCity, CountryId) VALUES
 ('Zipaquirá', 1);
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+-- Localidades bogotá
 INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Barrios bosa
 INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
 ('Jardines del Apogeo', 7),
 ('El Motorista', 7),
