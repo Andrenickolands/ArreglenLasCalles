@@ -1436,5 +1436,110 @@ INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
 ('San Bernardino XXII', 7),
 ('San Bernardino XXV', 7);
 
+----------------------------------------------------------------------------------------
+
+-- Barrios usaquen
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
 
 ----------------------------------------------------------------------------------------
+
+-- Barrios chapinero
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios santa fe
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios san cristobal
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios usme
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios tunjuelito
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios kennedy
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios fontibon
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios engativa
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios suba
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios barrios unidos
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios teusaquillo
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios martires
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios antonio nariño
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios puente aranda
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios la candelaria
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios rafael uribe
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
+
+----------------------------------------------------------------------------------------
+
+-- Barrios ciudad bolivar
+INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+('Jardines del Apogeo', 7),
