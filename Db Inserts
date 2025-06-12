@@ -1083,7 +1083,27 @@ INSERT INTO City (NameCity, CountryId) VALUES
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Localidades bogotá
-INSERT INTO Neighborhood (NameNeighborhood, LocalityId) VALUES
+INSERT INTO Locality (NameLocality, CityId) VALUESAdd commentMore actions
+('Usaquén', 4665),
+('Chapinero', 4665),
+('Santa Fe', 4665),
+('San Cristóbal', 4665),
+('Usme', 4665),
+('Tunjuelito', 4665),
+('Bosa', 4665),
+('Kennedy', 4665),
+('Fontibón', 4665),
+('Engativá', 4665),
+('Suba', 4665),
+('Barrios Unidos', 4665),
+('Teusaquillo', 4665),
+('Los Mártires', 4665),
+('Antonio Nariño', 4665),
+('Puente Aranda', 4665),
+('Candelaria', 4665),
+('Rafael Uribe Uribe', 4665),
+('Ciudad Bolívar', 4665),
+('Sumapaz', 4665);
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
