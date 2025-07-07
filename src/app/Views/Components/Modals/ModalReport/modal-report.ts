@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-modal-sign-in',
+  selector: 'app-modal-report',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './modal-sign-in.component.html',
-  styleUrl: './modal-sign-in.component.css'
+  templateUrl: './modal-report.html',
+  styleUrl: './modal-report.css'
 })
-export class ModalSignInComponent {
-
+export class ModalReport {
+  
   protected mostrar: boolean = false;
 
   constructor(private router: Router) {}
@@ -23,8 +23,9 @@ export class ModalSignInComponent {
     this.mostrar = false;
   }
 
-  navigateToLogin() {
-    this.router.navigate(['/Login']);
+  navigateToHome() {
+    this.router.navigate(['/Home']);
     this.close();
   }
+
 }

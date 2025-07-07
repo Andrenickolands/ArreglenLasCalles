@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HeaderSesionComponent } from "../../Components/Header/Header-sesion/header-sesion.component";
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
+import { ModalPhoto } from "../../Components/Modals/ModalPhoto/modal-photo";
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [HeaderSesionComponent, CommonModule, ReactiveFormsModule],
+  imports: [HeaderSesionComponent, CommonModule, ReactiveFormsModule, ModalPhoto],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
-
+  @ViewChild(ModalPhoto) modalPhoto!: ModalPhoto;
   ProfileForm: FormGroup;
   showErrors: boolean = false;
 
@@ -36,6 +37,10 @@ export class ProfileComponent implements OnInit {
   submitForm() {
     this.ProfileForm.markAllAsTouched();
     this.putUser();
+  }
+
+  Photo() {
+    this.modalPhoto.open();
   }
 
   putUser() {

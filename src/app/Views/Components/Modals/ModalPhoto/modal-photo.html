@@ -1,0 +1,15 @@
+<div class="modalContainer overlay" *ngIf="mostrar">
+    <div class="modal">
+        <div class="spaceBtns">
+            <div class="btn">
+                <button (click)="UploadPhoto()" class="btnPrincipal">Subir foto</button>
+            </div>
+            <div class="btn">
+                <button (click)="TakePhoto()" class="btnPrincipal">Tomar foto</button>
+            </div>
+            <div class="btn">
+                <button (click)="close()" class="btnSecundary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

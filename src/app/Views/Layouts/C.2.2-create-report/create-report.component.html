@@ -3,7 +3,7 @@
 <form [formGroup]="form">
     <div class="columns-container">
         <div class="ColumnLeft top80">
-            <div class="fotoContainer">
+            <div class="fotoContainer" (click)="Photo()">
                 <div class="fotoIcon">
                     <svg class="input-icon" width="70" height="57" viewBox="0 0 70 57" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +104,11 @@
     </div>
 </form>
 <div class="btn btnSpace">
-    <button class="btnRed" onclick="  Report()" type="submit">Reportar</button>
+    <button class="btnRed" (click)="Report()" type="submit">Reportar</button>
 </div>
+
+<app-modal-photo></app-modal-photo>
+
+<app-modal-report></app-modal-report>
 
 <app-footer></app-footer>
