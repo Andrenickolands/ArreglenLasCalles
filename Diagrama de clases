@@ -1,0 +1,95 @@
+Table Country {
+  id integer [primary key]
+  NameCountry varchar(50) [unique, not null]
+  CodeAlf3 varchar(3) [unique]
+  CodeAlf2 varchar(2) [unique]
+  CodeNum integer
+}
+
+Table City {
+  id integer [primary key]
+  NameCity varchar(50) [not null]
+  CountryId integer [not null]
+}
+
+Ref: City.CountryId > Country.id
+
+Table Locality {
+  id integer [primary key]
+  NameLocality varchar(50) [not null]
+  CityId integer [not null]
+}
+
+Ref: Locality.CityId > City.id
+
+Table Neighborhood {
+  id integer [primary key]
+  NameNeighborhood varchar(50) [not null]
+  LocalityId integer [not null]
+}
+
+Ref: Neighborhood.LocalityId > Locality.id
+
+Table ReportStatus {
+  id integer [primary key]
+  Status varchar(50) [unique, not null]
+}
+
+Table ReportImportance {
+  id integer [primary key]
+  Level varchar(100) [unique, not null]
+}
+
+Table ReportCategory {
+  id integer [primary key]
+  Name varchar(100) [unique, not null]
+}
+
+Table users {
+  id integer [primary key]
+  Name varchar(80) [not null]
+  Email varchar(100) [unique, not null]
+  CountryId integer [not null]
+  Password varchar(225)
+  AcceptsTerms boolean [not null]
+  RegistrationDate timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Ref: users.CountryId > Country.id
+
+Table Report {
+  id integer [primary key]
+  CreationDate timestamp [default: `CURRENT_TIMESTAMP`]
+  LastUpdatedDate timestamp [default: `CURRENT_TIMESTAMP`]
+  HasLocation boolean [default: false]
+  Latitude decimal(9,6)
+  Longitude decimal(9,6)
+  Address varchar(255) [not null]
+  Description text
+  CountryId integer [not null]
+  CityId integer [not null]
+  LocalityId integer [not null]
+  NeighborhoodId integer [not null]
+  UserId integer [not null]
+  ReportStatusId integer [not null]
+  ReportImportanceId integer [not null]
+  ReportCategoryId integer [not null]
+}
+
+Ref: Report.CountryId > Country.id
+Ref: Report.CityId > City.id
+Ref: Report.LocalityId > Locality.id
+Ref: Report.NeighborhoodId > Neighborhood.id
+Ref: Report.UserId > users.id
+Ref: Report.ReportStatusId > ReportStatus.id
+Ref: Report.ReportImportanceId > ReportImportance.id
+Ref: Report.ReportCategoryId > ReportCategory.id
+
+Table Image {
+  id integer [primary key]
+  Url varchar(255) [not null]
+  ReportId integer [not null]
+  UploadDate timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Ref: Image.ReportId > Report.id
