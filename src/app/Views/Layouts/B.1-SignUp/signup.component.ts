@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomValidators } from '../../../../Communs/Custom-validators';
-import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
@@ -16,11 +16,13 @@ export class SignupComponent implements OnInit {
   signUpUserForm: FormGroup;
   showErrors: boolean = false;
   inputType: string = 'password';
+  successMessage: string = '';
+  errorMessage: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private usersService: UsersService
+    private http: HttpClient
   ) {
     this.signUpUserForm = this.formBuilder.group({
       name: ['', [Validators.required, CustomValidators.onlyLetters]],
@@ -60,18 +62,28 @@ export class SignupComponent implements OnInit {
         password: this.signUpUserForm.get('newPassword')?.value,
       };
 
-      this.usersService.registerUser(user).subscribe({
-        next: () => {
-          alert('Usuario registrado con éxito');
-          this.router.navigate(['/Acept-terms']);
+      // Llamada al backend (Node.js)
+      this.http.post('http://localhost:3000/api/register', user).subscribe({
+        next: (res: any) => {
+          this.successMessage = 'Usuario registrado correctamente ✅';
+          this.errorMessage = '';
+          console.log('Respuesta del servidor:', res);
+
+          // Opcional: redirigir después de unos segundos
+          setTimeout(() => this.router.navigate(['/login']), 2000);
         },
-        error: (error) => {
-          console.error('Error al registrar usuario:', error);
-          alert('Hubo un error al registrar el usuario');
+        error: (err) => {
+          console.error('Error al registrar usuario:', err);
+          this.errorMessage = 'Ocurrió un error al registrar el usuario.';
         }
       });
+
     } else {
       this.showErrors = true;
+      Object.keys(this.signUpUserForm.controls).forEach(field => {
+        const control = this.signUpUserForm.get(field);
+        control?.markAsTouched();
+      });
     }
   }
 }

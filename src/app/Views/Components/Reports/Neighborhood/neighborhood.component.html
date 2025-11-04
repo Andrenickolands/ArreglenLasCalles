@@ -1,8 +1,8 @@
 <div class="containerText" *ngFor="let neighborhood of datos; trackBy: trackByInfo">
   <div class="spaceText">
     <h2 class="h2 color">Barrio</h2>
-    <h3 class="h3 red">{{ neighborhood.NameNeighborhood }}</h3>
-    <h5 class="h5 colorText"> <strong>{{ NumReportsNeighborhood }} </strong> <br> reportes de huecos en sus calles</h5>
+    <h3 class="h3 red"></h3>
+    <h5 class="h5 colorText"> <strong> </strong> <br> reportes de huecos en sus calles</h5>
   </div>
 
   <div class="containerText" *ngFor="let report of datos; trackBy: trackByInfo">
@@ -19,9 +19,9 @@
         <div class="listContainer">
           <div class="Space">
             <div class="listSpace">
-              <span class="h6 colorText">{{ report.Address }}</span>
+              <span class="h6 colorText"></span>
               <span class="p colorText reportSpaceText">
-                <span class="red">{{ report.numero1 }}</span> reportes de huecos en las calles
+                <span class="red"></span> reportes de huecos en las calles
               </span>
             </div>
             <i class="i" (click)="select(report.id)">

@@ -5,6 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CountryComponent } from '../../Components/Reports/Country/country.component';
 
 @Component({
+  standalone: true,
   selector: 'app-dashboard',
   imports: [FooterComponent, CountryComponent, HeaderDashboardComponent],
   templateUrl: './dashboard.component.html',
