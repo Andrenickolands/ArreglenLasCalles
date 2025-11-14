@@ -12,14 +12,14 @@ import { ModalSignInComponent } from '../../Modals/ModalLogin/modal-sign-in.comp
 })
 export class CountryComponent implements OnInit {
 
-  constructor() {}
+ constructor(private router: Router) {}
 
+goToReport() {
+  this.router.navigate(['/Create-report']);
+}
   ngOnInit(): void {
     console.log('AppComponent inicializado 🚀');
   }
 
 
-  //  <div class="search-container" >
-  //   <input type="text" class="search-input" placeholder = "Buscar país..." [(ngModel)] = "searchTerm" (keyup) = "filterCountries()">
-  //  </div>
 }

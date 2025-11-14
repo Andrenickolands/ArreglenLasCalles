@@ -3,23 +3,23 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mysql from 'mysql2';
 
-// 🔹 Configuración del servidor
 const app = express();
 const PORT = 3000;
 
-// 🔹 Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+app.use("/uploads", express.static("uploads"));
+import reportesRoutes from "./src/routes/reportes";
+app.use("/api", reportesRoutes);
 
-// 🔹 Conexión a la base de datos MySQL (XAMPP)
+
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',          // usuario por defecto de XAMPP
-  password: '',          // déjalo vacío si no tienes contraseña
-  database: 'home' // cambia esto por el nombre exacto de tu DB
+  user: 'root',
+  password: '',
+  database: 'home'
 });
 
-// 🔹 Verificar conexión
 db.connect(err => {
   if (err) {
     console.error('❌ Error al conectar a la base de datos:', err);
@@ -28,12 +28,10 @@ db.connect(err => {
   console.log('✅ Conectado a MySQL (XAMPP)');
 });
 
-// 🔹 Endpoint de prueba
 app.get('/', (req: Request, res: Response) => {
   res.send('Servidor backend funcionando correctamente 🚀');
 });
 
-// 🔹 Endpoint para registrar usuario
 app.post('/api/register', (req: Request, res: Response) => {
   const { nombre, email, pais, nacimiento, password } = req.body;
 
@@ -52,7 +50,41 @@ app.post('/api/register', (req: Request, res: Response) => {
   });
 });
 
-// 🔹 Iniciar el servidor
+
+// 🔹 NUEVO: Login
+app.post('/api/login', (req: Request, res: Response) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Faltan campos requeridos' });
+  }
+
+  const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
+db.query(sql, [email, password], (err, results: any[]) => {
+  if (err) {
+    console.error('❌ Error al buscar usuario:', err);
+    return res.status(500).json({ message: 'Error en el servidor' });
+  }
+
+  if (results.length > 0) {
+    const user = results[0];
+    return res.status(200).json({
+      message: '✅ Inicio de sesión exitoso',
+      user: {
+        id: user.id,
+        nombre: user.nombre,
+        email: user.email,
+        pais: user.pais,
+      },
+    });
+  } else {
+    return res.status(401).json({ message: 'Credenciales incorrectas' });
+  }
+});
+
+});
+
+
 app.listen(PORT, () => {
   console.log(`🚀 Servidor backend corriendo en http://localhost:${PORT}`);
 });

@@ -26,6 +26,14 @@
             </svg>
         </div>
 
+        <!-- Mensajes de éxito o error -->
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-error">
+            {{ errorMessage }}
+        </div>
+
         <form [formGroup]="loginForm" (ngSubmit)="login()">
 
             <div class="inputPosition">
@@ -48,6 +56,7 @@
                     <div class="requisito" *ngIf="isFieldInvalid('password')">
                         <span *ngIf="loginForm.get('password')?.errors?.['required']">Este campo es
                             obligatorio</span>
+                        <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Mínimo 8 caracteres</span>
                         <span *ngIf="loginForm.get('password')?.errors?.['login']">La contraseña no es correcta</span>
                     </div>
                     <div class="position">
@@ -78,8 +87,10 @@
             <div class="btnPostion btnTop">
                 <div class="btnSpace">
                     <div class="btn">
-                        <button class="btnPrincipal" (click)="login()" type="submit"
-                            [disabled]="!loginForm.valid">Iniciar Sesión</button>
+                        <button class="btnPrincipal" type="submit"
+                            [disabled]="!loginForm.valid || isLoading">
+                            {{ isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
+                        </button>
                     </div>
                 </div>
                 <div class="inputPosition">
@@ -96,7 +107,7 @@
 
                 <div>
                     <div class="btn btnTop2">
-                        <button (click)="navigateToPage()" type="submit" class="btn-P-Line">Registrate</button>
+                        <button (click)="navigateToPage()" type="button" class="btn-P-Line">Registrate</button>
                     </div>
                 </div>
             </div>

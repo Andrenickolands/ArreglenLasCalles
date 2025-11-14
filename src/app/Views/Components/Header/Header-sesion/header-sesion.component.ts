@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../../../../app/services/aut.service';
 
 @Component({
   selector: 'app-header-sesion',
@@ -12,10 +13,12 @@ import { Router, RouterModule } from '@angular/router';
 export class HeaderSesionComponent implements OnInit {
   isMenuOpen = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -37,11 +40,10 @@ export class HeaderSesionComponent implements OnInit {
     this.router.navigate(['/Help']);
   }
 
-  Donate(){
+  Donate() {}
 
-  }
-
-  LogOut(){
-    this.router.navigate(['/Dashboard']);
-  }
+  LogOut() {
+  this.authService.logout();
+  this.router.navigate(['/Login']);
+}
 }
